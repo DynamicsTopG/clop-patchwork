@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CLOP Patchwork: estudio de diseño textil familiar en España. Bolsos, neceseres, colchas y cojines de patchwork hechos a mano, upcycling de tejidos recuperados y patrones de costura en PDF. Creaciones únicas hechas a mano.">
+<meta name="keywords" content="patchwork, quilting, bolsos de patchwork, complementos artesanales, upcycling, tejidos reciclados, patrones de costura PDF, hecho a mano, España, artesanía textil, bolsos únicos, handmade patchwork bags Spain">
+<meta name="author" content="CLOP Patchwork">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="canonical" href="https://www.cloppatchwork.es/">
+<link rel="icon" href="Logo.jpeg">
+<link rel="apple-touch-icon" href="Logo.jpeg">
+<!-- Open Graph (Facebook, Instagram, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CLOP Patchwork">
+<meta property="og:title" content="CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano">
+<meta property="og:description" content="Estudio de diseño textil familiar en España. Creaciones únicas de patchwork hechas a mano y patrones de costura en PDF. Haz tu pedido por mensaje directo.">
+<meta property="og:url" content="https://www.cloppatchwork.es/">
+<meta property="og:image" content="https://www.cloppatchwork.es/img/post-08.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano">
+<meta name="twitter:description" content="Estudio de diseño textil familiar en España. Creaciones únicas de patchwork hechas a mano y patrones de costura en PDF.">
+<meta name="twitter:image" content="https://www.cloppatchwork.es/img/post-08.jpg">
+<title>CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano en España</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Caveat:wght@600&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --linen:#F6F1E7;          /* page ground, warm linen */
+    --linen-deep:#EFE8D9;     /* darker weave stripe */
+    --card:#FDFBF5;           /* card panel */
+    --ink:#3A332C;            /* warm near-black */
+    --ink-soft:#7C7265;       /* muted taupe */
+    --rosa:#E8447E;           /* CLOP logo pink */
+    --rosa-deep:#C92A63;
+    --rosa-soft:#FADCE7;
+    --denim:#7C93B5;
+    --mustard:#D9A441;
+    --sage:#8FA382;
+    --seam:rgba(58,51,44,.18);        /* stitch lines */
+    --seam-strong:rgba(58,51,44,.34);
+    --chip-ok:#4C7A5D;
+    --chip-warn:#96690F;
+    --chip-last:#B02359;
+    --shadow:0 1px 2px rgba(58,51,44,.06), 0 10px 30px -12px rgba(58,51,44,.18);
+    --shadow-lift:0 2px 4px rgba(58,51,44,.07), 0 18px 44px -14px rgba(58,51,44,.26);
+    --r:1.1rem;               /* card radius */
+    --r-big:1.6rem;
+    --font-display:"Fraunces","Bodoni MT","Baskerville",Georgia,serif;
+    --font-body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+    --font-script:"Caveat","Segoe Script",cursive;
+  }
+
+  /* ============ BASE ============ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:1.04rem;
+    line-height:1.65;
+    background-color:var(--linen);
+    /* woven linen texture, pure CSS */
+    background-image:
+      repeating-linear-gradient(0deg,  rgba(58,51,44,.022) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(58,51,44,.022) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at 50% -10%, #FBF7EE 0%, var(--linen) 55%);
+  }
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    line-height:1.12;
+    text-wrap:balance;
+    margin:0;
+    letter-spacing:.005em;
+  }
+  p{ margin:0; }
+  img{ max-width:100%; }
+  a{ color:var(--rosa-deep); text-underline-offset:3px; }
+  :focus-visible{ outline:2px solid var(--rosa); outline-offset:3px; border-radius:4px; }
+  ::selection{ background:var(--rosa); color:#fff; }
+
+  .script{ font-family:var(--font-script); color:var(--rosa); font-size:1.35em; line-height:1; }
+  .eyebrow{
+    font-size:.76rem; font-weight:700;
+    letter-spacing:.2em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .eyebrow b{ color:var(--rosa); }
+
+  .wrap{ max-width:74rem; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,3rem); }
+  section{ padding-block:clamp(3.2rem,7vw,5.5rem); }
+  .section-head{
+    display:flex; flex-direction:column; gap:.8rem; align-items:center; text-align:center;
+    margin-bottom:clamp(2rem,5vw,3.2rem);
+    margin-inline:auto; max-width:46rem;
+  }
+  .section-head h2{ font-size:clamp(1.9rem,4vw,2.6rem); }
+  .section-head p{ color:var(--ink-soft); max-width:40rem; }
+  .section-head .rule{
+    width:5.5rem; height:0; border-top:2px dashed var(--rosa);
+    position:relative;
+  }
+  .section-head .rule::after{
+    content:""; position:absolute; left:50%; top:-4px;
+    width:7px; height:7px; border-radius:50%;
+    background:var(--rosa); transform:translateX(-50%);
+  }
+
+  /* stitched card: rounded panel + inner dashed seam */
+  .stitched{
+    background:var(--card);
+    border-radius:var(--r);
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .stitched::after{
+    content:""; position:absolute; inset:.5rem;
+    border:1.5px dashed var(--seam);
+    border-radius:calc(var(--r) - .45rem);
+    pointer-events:none;
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+    font-family:var(--font-body); font-weight:700;
+    font-size:.95rem; letter-spacing:.02em;
+    padding:.8rem 1.55rem;
+    text-decoration:none;
+    border-radius:.7rem;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-rosa{
+    background:var(--rosa); color:#fff; border:none;
+    box-shadow:0 2px 0 var(--rosa-deep), 0 10px 22px -8px rgba(201,42,99,.55);
+    /* stitched edge on the button, like the concept */
+    outline:1.5px dashed rgba(255,255,255,.75); outline-offset:-5px;
+  }
+  .btn-rosa:hover{ background:var(--rosa-deep); }
+  .btn-ghost{
+    background:transparent; color:var(--ink);
+    border:1.5px dashed var(--seam-strong);
+  }
+  .btn-ghost:hover{ border-color:var(--rosa); color:var(--rosa-deep); }
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--linen) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1.5px dashed var(--seam);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between; gap:1.2rem;
+    padding-block:.6rem;
+  }
+  .brand{
+    display:flex; align-items:center; gap:.7rem;
+    text-decoration:none; color:var(--ink);
+  }
+  .brand-logo{
+    width:3rem; height:3rem; border-radius:50%;
+    background:#fff; box-shadow:var(--shadow);
+    display:grid; place-items:center; overflow:hidden;
+    flex:none;
+  }
+  .brand-logo img{ width:86%; height:86%; object-fit:contain; display:block; }
+  .brand-name{
+    font-family:var(--font-display); font-size:1.35rem; letter-spacing:.14em;
+    line-height:1;
+  }
+  .brand-sub{
+    display:block; font-family:var(--font-script); font-size:1rem;
+    color:var(--rosa); letter-spacing:.04em; margin-top:.15rem;
+  }
+  .nav-links{ display:flex; gap:1.5rem; align-items:center; }
+  .nav-links a{
+    color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem;
+    padding-block:.3rem;
+  }
+  .nav-links a:hover{ color:var(--rosa-deep); }
+  .nav-tools{ display:flex; align-items:center; gap:.7rem; }
+  .lang-toggle{
+    font-family:var(--font-body); font-weight:700;
+    font-size:.8rem; letter-spacing:.12em;
+    background:transparent; color:var(--ink);
+    border:1.5px dashed var(--seam-strong);
+    padding:.42rem .8rem; cursor:pointer; border-radius:.6rem;
+  }
+  .lang-toggle:hover{ border-color:var(--rosa); color:var(--rosa-deep); }
+  .ig-link{
+    width:2.3rem; height:2.3rem; border-radius:.6rem;
+    display:grid; place-items:center;
+    color:var(--ink); border:1.5px dashed var(--seam-strong);
+  }
+  .ig-link:hover{ color:var(--rosa-deep); border-color:var(--rosa); }
+  .menu-btn{
+    display:none;
+    width:2.5rem; height:2.5rem; border-radius:.6rem;
+    background:transparent; border:1.5px dashed var(--seam-strong);
+    color:var(--ink); cursor:pointer;
+    place-items:center;
+  }
+  .mobile-menu{
+    display:none;
+    border-top:1.5px dashed var(--seam);
+    padding:.8rem 0 1rem;
+  }
+  .mobile-menu a{
+    display:block; padding:.55rem 0;
+    color:var(--ink); text-decoration:none; font-weight:600;
+  }
+  .mobile-menu a:hover{ color:var(--rosa-deep); }
+  @media (max-width:47rem){
+    .nav-links{ display:none; }
+    .menu-btn{ display:grid; }
+    .mobile-menu.open{ display:block; }
+    .brand-name{ font-size:1.15rem; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{ padding-block:clamp(1.4rem,3.5vw,2.6rem) clamp(3rem,6vw,4.5rem); }
+  .hero-frame{
+    position:relative;
+    border-radius:var(--r-big);
+    overflow:hidden;
+    box-shadow:var(--shadow-lift);
+    min-height:clamp(26rem,58vw,34rem);
+    display:flex; align-items:center;
+  }
+  .hero-frame > img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center 58%;
+  }
+  .hero-frame::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(58,51,44,.18) 0%, rgba(58,51,44,0) 45%);
+    pointer-events:none;
+  }
+  .hero-card{
+    position:relative; z-index:2;
+    margin:clamp(1.2rem,4vw,3rem);
+    margin-left:auto;
+    max-width:30rem;
+    padding:clamp(1.6rem,4vw,2.6rem);
+    background:color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter:blur(3px);
+    border-radius:var(--r-big);
+    box-shadow:var(--shadow-lift);
+  }
+  .hero-card::after{
+    content:""; position:absolute; inset:.6rem;
+    border:1.5px dashed var(--seam);
+    border-radius:calc(var(--r-big) - .5rem);
+    pointer-events:none;
+  }
+  .hero-card > *{ position:relative; z-index:1; }
+  .hero-card .script{ font-size:1.5rem; display:block; margin-bottom:.4rem; }
+  .hero-card h1{ font-size:clamp(1.9rem,4.6vw,2.75rem); margin-bottom:.9rem; }
+  .hero-card h1 em{ font-style:italic; color:var(--rosa-deep); }
+  .hero-card p{ color:var(--ink-soft); margin-bottom:1.4rem; }
+  .hero-ctas{ display:flex; gap:.8rem; flex-wrap:wrap; }
+  @media (max-width:47rem){
+    .hero-frame{ align-items:flex-end; }
+    .hero-card{ margin:1rem; max-width:none; }
+  }
+  /* gentle entrance */
+  .hero-card > *{ opacity:0; animation:settle .7s ease-out forwards; }
+  .hero-card > *:nth-child(2){ animation-delay:.1s; }
+  .hero-card > *:nth-child(3){ animation-delay:.2s; }
+  .hero-card > *:nth-child(4){ animation-delay:.3s; }
+  @keyframes settle{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+
+  /* ============ SELVAGE STRIP ============ */
+  .selvage{
+    border-block:1.5px dashed var(--seam);
+    background:var(--linen-deep);
+    overflow:hidden;
+  }
+  .selvage-row{
+    display:flex; align-items:center; gap:2.2rem;
+    padding-block:.6rem;
+    white-space:nowrap;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .selvage-row span{
+    font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .dots{ display:inline-flex; gap:.4rem; }
+  .dots i{ width:.55rem; height:.55rem; border-radius:50%; display:inline-block; }
+
+  /* ============ REVEAL ON SCROLL ============ */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ============ COLECCIÓN ============ */
+  .grid-products{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr));
+    gap:1.6rem;
+  }
+  .card{
+    display:flex; flex-direction:column;
+    background:var(--card);
+    border-radius:var(--r);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+  a.card-art{ display:block; position:relative; overflow:hidden; }
+  .card-photo{
+    display:block; width:100%; aspect-ratio:1/1; object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .card:hover .card-photo{ transform:scale(1.045); }
+  .card-body{
+    padding:1.15rem 1.3rem 1.35rem;
+    display:flex; flex-direction:column; gap:.55rem; flex:1;
+    border-top:1.5px dashed var(--seam);
+  }
+  .card-body h3{ font-size:1.28rem; }
+  .card-body .mat{ color:var(--ink-soft); font-size:.92rem; flex:1; }
+  .card-meta{
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    margin-top:.6rem; padding-top:.85rem;
+    border-top:1px solid var(--seam);
+  }
+  .see-post{
+    font-size:.85rem; font-weight:700;
+    text-decoration:none;
+  }
+  .see-post:hover{ text-decoration:underline; }
+  /* little sewing-tag chip */
+  .chip{
+    font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    padding:.3rem .65rem .3rem 1.15rem;
+    border:1.5px dashed currentColor;
+    border-radius:.55rem;
+    position:relative;
+    background:color-mix(in srgb, currentColor 7%, transparent);
+  }
+  .chip::before{
+    content:""; position:absolute; left:.42rem; top:50%;
+    width:.32rem; height:.32rem; border-radius:50%;
+    transform:translateY(-50%);
+    border:1.5px solid currentColor;
+  }
+  .chip-ok{ color:var(--chip-ok); }
+  .chip-warn{ color:var(--chip-warn); }
+  .chip-last{ color:var(--chip-last); }
+  .unique-note{
+    margin-top:2.4rem;
+    color:var(--ink-soft); font-size:.98rem;
+    display:flex; align-items:center; justify-content:center; gap:.7rem;
+    text-align:center; flex-wrap:wrap;
+  }
+  .unique-note::before{
+    content:""; width:2.4rem; height:0;
+    border-top:2px dashed var(--rosa);
+  }
+
+  /* ============ PATRONES ============ */
+  #patrones{ background:var(--linen-deep); border-block:1.5px dashed var(--seam); }
+  .grid-patterns{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));
+    gap:1.6rem;
+  }
+  .pattern-card{
+    display:flex; flex-direction:column; gap:0;
+    background:var(--card);
+    border-radius:var(--r);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .pattern-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+  .p-block{ padding:1.3rem 1.3rem 0; }
+  .p-block svg{
+    width:100%; height:auto; display:block;
+    border-radius:.7rem;
+  }
+  .p-body{
+    padding:1.05rem 1.3rem 1.3rem;
+    display:flex; flex-direction:column; gap:.5rem; flex:1;
+  }
+  .p-body h3{ font-size:1.22rem; }
+  .lvl{
+    font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .p-includes{ color:var(--ink-soft); font-size:.9rem; flex:1; }
+  .p-foot{
+    display:flex; align-items:center; justify-content:space-between; gap:.8rem;
+    margin-top:.5rem; padding-top:.9rem;
+    border-top:1px solid var(--seam);
+  }
+  /* price as a hanging sewing tag */
+  .price-tag{
+    font-weight:700; font-size:1.02rem;
+    font-variant-numeric:tabular-nums;
+    background:var(--linen);
+    border:1.5px dashed var(--seam-strong);
+    border-radius:.55rem;
+    padding:.32rem .7rem .32rem 1.25rem;
+    position:relative;
+    transform:rotate(-2deg);
+  }
+  .price-tag::before{
+    content:""; position:absolute; left:.45rem; top:50%;
+    width:.36rem; height:.36rem; border-radius:50%;
+    transform:translateY(-50%);
+    border:1.5px solid var(--ink-soft);
+    background:var(--card);
+  }
+  .btn-sm{ padding:.55rem 1.05rem; font-size:.88rem; border-radius:.6rem; }
+  .pattern-note{
+    margin-top:1.8rem; color:var(--ink-soft); font-size:.95rem;
+    max-width:44rem; margin-inline:auto; text-align:center;
+  }
+
+  /* ============ VALORES ============ */
+  .values-grid{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1.6rem;
+  }
+  @media (max-width:52rem){ .values-grid{ grid-template-columns:1fr; } }
+  .value{
+    padding:2rem 1.7rem;
+    display:flex; flex-direction:column; gap:.8rem; align-items:flex-start;
+  }
+  .value svg{ width:3rem; height:3rem; }
+  .value h3{ font-size:1.4rem; }
+  .value p{ color:var(--ink-soft); font-size:.96rem; }
+
+  /* ============ NOSOTROS / HISTORIA ============ */
+  #nosotros{ background:var(--linen-deep); border-block:1.5px dashed var(--seam); }
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1.15fr;
+    gap:clamp(2rem,5vw,4rem); align-items:center;
+  }
+  @media (max-width:52rem){ .about-grid{ grid-template-columns:1fr; } }
+  .about-photos{
+    position:relative;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem;
+    padding:1rem;
+  }
+  .about-photos img{
+    width:100%; aspect-ratio:1/1; object-fit:cover;
+    border-radius:50%;
+    border:5px solid var(--card);
+    box-shadow:var(--shadow-lift);
+    display:block;
+  }
+  .about-photos img:nth-child(2){ transform:translateY(2.2rem); }
+  .about-photos .patch-deco{
+    position:absolute; z-index:-1; inset:0;
+    display:grid; place-items:center;
+  }
+  .about-copy{ display:flex; flex-direction:column; gap:1.1rem; align-items:flex-start; }
+  .about-copy .script{ font-size:1.6rem; }
+  .about-copy h2{ font-size:clamp(1.9rem,4vw,2.6rem); }
+  .about-copy .lead{
+    font-family:var(--font-display);
+    font-size:1.35rem; line-height:1.4;
+  }
+  .about-copy p{ color:var(--ink-soft); }
+  .about-copy p strong{ color:var(--ink); }
+
+  /* ============ CONTACTO ============ */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1.1fr;
+    gap:clamp(2rem,5vw,3.5rem); align-items:start;
+  }
+  @media (max-width:52rem){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-intro{ display:flex; flex-direction:column; gap:1rem; align-items:flex-start; }
+  .contact-intro h2{ font-size:clamp(1.9rem,4vw,2.6rem); }
+  .contact-intro p{ color:var(--ink-soft); max-width:32rem; }
+  .contact-list{
+    list-style:none; margin:.4rem 0 0; padding:0;
+    display:flex; flex-direction:column; gap:1rem;
+  }
+  .contact-list li{ display:flex; align-items:center; gap:.9rem; }
+  .contact-ico{
+    width:2.6rem; height:2.6rem; border-radius:50%; flex:none;
+    background:var(--rosa-soft); color:var(--rosa-deep);
+    display:grid; place-items:center;
+  }
+  .contact-list .eyebrow{ display:block; margin-bottom:.05rem; }
+  .contact-list a{ color:var(--ink); font-weight:600; text-decoration:none; }
+  .contact-list a:hover{ color:var(--rosa-deep); text-decoration:underline; }
+  /* notebook-style form */
+  .contact-form{ padding:clamp(1.5rem,4vw,2.2rem); }
+  .contact-form h3{ font-size:1.5rem; margin-bottom:.4rem; }
+  .contact-form .form-sub{ color:var(--ink-soft); font-size:.93rem; margin-bottom:1.3rem; }
+  .field{ display:flex; flex-direction:column; gap:.3rem; margin-bottom:1rem; }
+  .field label{
+    font-size:.76rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .field input,.field textarea{
+    font-family:var(--font-body); font-size:1rem; color:var(--ink);
+    background:var(--linen);
+    border:1.5px dashed var(--seam-strong);
+    border-radius:.6rem;
+    padding:.7rem .9rem;
+    resize:vertical;
+  }
+  .field input:focus,.field textarea:focus{
+    outline:2px solid var(--rosa); outline-offset:1px; border-color:transparent;
+  }
+  .form-note{ color:var(--ink-soft); font-size:.83rem; margin-top:.9rem; }
+
+  /* ============ FOOTER ============ */
+  footer{
+    border-top:1.5px dashed var(--seam);
+    padding-block:1.6rem 2.2rem;
+    background:var(--linen-deep);
+  }
+  .foot-row{
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+    color:var(--ink-soft); font-size:.88rem;
+  }
+  .foot-brand{ display:flex; align-items:center; gap:.6rem; }
+  .foot-brand img{
+    width:2.1rem; height:2.1rem; border-radius:50%;
+    background:#fff; object-fit:contain; box-shadow:var(--shadow);
+  }
+  .foot-row .script{ font-size:1.25rem; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero-card > *{ animation:none; opacity:1; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .card,.pattern-card,.btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="CLOP Patchwork — inicio">
+        <span class="brand-logo"><img src="Logo.jpeg" alt="Logotipo de CLOP: dos manos formando una C"></span>
+        <span>
+          <span class="brand-name">CLOP</span>
+          <span class="brand-sub">Hand Made</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#coleccion" data-i18n="nav-col">Colección</a>
+        <a href="#patrones" data-i18n="nav-pat">Patrones</a>
+        <a href="#valores" data-i18n="nav-val">Valores</a>
+        <a href="#nosotros" data-i18n="nav-nos">Nosotros</a>
+        <a href="#contacto" data-i18n="nav-con">Contacto</a>
+      </nav>
+      <div class="nav-tools">
+        <a class="ig-link" href="https://www.instagram.com/clop_patchwork" aria-label="Instagram de CLOP Patchwork">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.8" cy="6.2" r="1.3" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language / Cambiar idioma">EN</button>
+        <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Secciones (móvil)">
+      <a href="#coleccion" data-i18n="nav-col">Colección</a>
+      <a href="#patrones" data-i18n="nav-pat">Patrones</a>
+      <a href="#valores" data-i18n="nav-val">Valores</a>
+      <a href="#nosotros" data-i18n="nav-nos">Nosotros</a>
+      <a href="#contacto" data-i18n="nav-con">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Presentación">
+    <div class="wrap">
+      <div class="hero-frame">
+        <img src="img/post-06.jpg" alt="Colcha de patchwork con flor Dresden tendida al sol" fetchpriority="high">
+        <div class="hero-card">
+          <span class="script" data-i18n="hero-script">Hecho a mano, retal a retal</span>
+          <h1 data-i18n="hero-h1">Costura con corazón, para tu <em>hogar</em>.</h1>
+          <p data-i18n="hero-quote">«Clop no es solo una marca de complementos: es un estudio de diseño textil donde cada pieza se trabaja con una precisión que solo la experiencia y la pasión pueden ofrecer.»</p>
+          <div class="hero-ctas">
+            <a class="btn btn-rosa" href="#coleccion" data-i18n="cta-col">Ver la colección</a>
+            <a class="btn btn-ghost" href="#patrones" data-i18n="cta-pat">Comprar un patrón</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELVAGE ============ -->
+  <div class="selvage" aria-hidden="true">
+    <div class="selvage-row">
+      <span>Clop Patchwork</span>
+      <span class="dots"><i style="background:var(--denim)"></i><i style="background:var(--rosa)"></i><i style="background:var(--mustard)"></i><i style="background:var(--sage)"></i></span>
+      <span data-i18n="selv-1">Hecho a mano en España</span>
+      <span class="dots"><i style="background:var(--sage)"></i><i style="background:var(--mustard)"></i><i style="background:var(--rosa)"></i><i style="background:var(--denim)"></i></span>
+      <span data-i18n="selv-2">Tejidos recuperados</span>
+    </div>
+  </div>
+
+  <!-- ============ COLECCIÓN ============ -->
+  <section id="coleccion">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="col-eye"><b>Pieza 02</b> · Colección actual</p>
+        <h2 data-i18n="col-h2">Piezas en curso</h2>
+        <span class="rule"></span>
+        <p data-i18n="col-p">Cada complemento se corta, se compone y se cose en nuestro taller. Ninguna pieza se repite: cuando se va, se va.</p>
+      </div>
+
+      <div class="grid-products">
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DaLepSoDUeJ/">
+            <img class="card-photo" src="img/post-01.jpg" alt="Neceser de patchwork acolchado con telas florales de Tilda y cremallera rosa" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-1">Neceser «Flores de Tilda»</h3>
+            <p class="mat" data-i18n="mat-1">«Un detalle que sabe a complicidad. Para este encargo especial elegí estas telas de Tilda: tienen ese punto romántico y delicado.» Modelo práctico que se abre por completo.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DaLepSoDUeJ/">Ver el post →</a>
+              <span class="chip chip-warn" data-i18n="chip-ord">Por encargo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DaAqsqwDSTk/">
+            <img class="card-photo" src="img/post-02.jpg" alt="Neceser de patchwork con triángulos de rayas negras y cuadros vichy amarillos" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-2">Neceser «Vichy»</h3>
+            <p class="mat" data-i18n="mat-2">«No nació solo de la aguja y el hilo, sino de las ganas de hacerle algo único a mi hija.» Rayas y cuadros vichy: alegre, moderno y con carácter; al abrir la cremallera se despliega por completo.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DaAqsqwDSTk/">Ver el post →</a>
+              <span class="chip chip-warn" data-i18n="chip-ord">Por encargo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DZxLSltDaci/">
+            <img class="card-photo" src="img/post-03.jpg" alt="Cesta costurero de patchwork con flores y casita aplicadas, llena de materiales de costura" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-3">Cesta «Costurero»</h3>
+            <p class="mat" data-i18n="mat-3">«Nació como costurero, pero es mucho más: neceser de viaje, cesta de pícnic, organizador de manualidades o maletita para lo esencial.» Asas resistentes y espacio amplio.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DZxLSltDaci/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DXzJqHMjcg0/">
+            <img class="card-photo" src="img/post-04.jpg" alt="Bolso de nudo japonés tejido a mano con hilo negro brillante" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-4">Bolso «Nudo»</h3>
+            <p class="mat" data-i18n="mat-4">«Hay días que piden ligereza y piezas que simplemente encajan con todo. El equilibrio perfecto entre diseño moderno y el alma de lo artesanal», tejido con un hilo muy especial.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DXzJqHMjcg0/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DWcHRPNDVja/">
+            <img class="card-photo" src="img/post-05.jpg" alt="Bolso tote de patchwork con pájaros y tulipán pintados a mano estilo folk" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-5">Bolso «Pájaros»</h3>
+            <p class="mat" data-i18n="mat-5">«Un deseo de unir mundos distintos que comparten el mismo corazón artesanal.» Pintura en tela —pájaros de colores vibrantes— sobre patchwork: un viaje de texturas y técnicas.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DWcHRPNDVja/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DVqdCPjDdwy/">
+            <img class="card-photo" src="img/post-06.jpg" alt="Colcha de patchwork acolchada a mano con gran flor Dresden de telas de cuadros" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-6">Colcha «Flor»</h3>
+            <p class="mat" data-i18n="mat-6">«Hay piezas que no solo se hacen… se construyen puntada a puntada. Cada flor está cosida a mano, como si cada retal fuera un pequeño recuerdo que encuentra su lugar.»</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DVqdCPjDdwy/">Ver el post →</a>
+              <span class="chip chip-warn" data-i18n="chip-ord">Por encargo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DVY9vseDR3a/">
+            <img class="card-photo" src="img/post-07.jpg" alt="Bolso acolchado de patchwork con muñeca, corazones y mariposas aplicados a mano" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-7">Bolso «Corazones»</h3>
+            <p class="mat" data-i18n="mat-7">«Hay bolsos que son puro hogar.» Acolchado, patchwork y aplicaciones cosidas a mano que recuerdan a las labores de antes. Sin prisas. Con intención.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DVY9vseDR3a/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DVQrR4vDVBE/">
+            <img class="card-photo" src="img/post-08.jpg" alt="Bolso clásico de boquilla con bloque de patchwork en espiral y asas de cuero" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-8">Bolso «Concha»</h3>
+            <p class="mat" data-i18n="mat-8">«Inspirado en mi abuela Concha: en sus telas, en sus manos siempre creando, en su manera de convertir retales en algo valioso.» Estructura clásica, tonos tierra y boquilla metálica.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DVQrR4vDVBE/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DVOYC4Ujaa5/">
+            <img class="card-photo" src="img/post-09.jpg" alt="Bolso triangular de tela vaquera entretejida en damero con flecos" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-9">Bolso «Trenzado Denim»</h3>
+            <p class="mat" data-i18n="mat-9">«Un diseño que ya conocéis, pero con una nueva historia que contar. Mismo patrón, nueva energía: nuevas telas, nuevas texturas, la misma esencia artesanal.»</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DVOYC4Ujaa5/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DUdnmYNjTYe/">
+            <img class="card-photo" src="img/post-10.jpg" alt="Dos cojines de patchwork estilo log cabin con bota y casita bordadas a mano" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-10">Cojines «Hogar»</h3>
+            <p class="mat" data-i18n="mat-10">«Tu sofá merece piezas que cuenten algo más que comodidad. Cojines únicos, llenos de detalles y corazón.» Log cabin con aplicaciones y bordado artesanal.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DUdnmYNjTYe/">Ver el post →</a>
+              <span class="chip chip-last" data-i18n="chip-sold">Vendidos</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DS3L3Q1jZ7X/">
+            <img class="card-photo" src="img/post-11.jpg" alt="Bandolera acolchada amarilla con flores de tela aplicadas y bandolera de espiga" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-11">Bandolera «Flores»</h3>
+            <p class="mat" data-i18n="mat-11">«Hecho a mano, con calma y mucha dedicación. No es solo un accesorio: es una pieza única llena de textura y color. Porque lo artesanal siempre tiene una historia que contar.»</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DS3L3Q1jZ7X/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-art" href="https://www.instagram.com/p/DSS0CkDjUhc/">
+            <img class="card-photo" src="img/post-12.jpg" alt="Bolso de boquilla vintage hecho con denim reciclado y cadena metálica" loading="lazy">
+          </a>
+          <div class="card-body">
+            <h3 data-i18n="name-12">Bolso «Denim Vintage»</h3>
+            <p class="mat" data-i18n="mat-12">«Cuando el denim vintage se convierte en arte. Hecho a mano, con historia y con alma. Pieza única — porque tú también lo eres.» Boquilla vintage y cadena metálica.</p>
+            <div class="card-meta">
+              <a class="see-post" data-i18n="see-post" href="https://www.instagram.com/p/DSS0CkDjUhc/">Ver el post →</a>
+              <span class="chip chip-ok" data-i18n="chip-uni">Pieza única</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="unique-note reveal" data-i18n="uniq-note">Para reservar una pieza o encargar una a medida, escríbenos por Instagram: <a href="https://ig.me/m/clop_patchwork">@clop_patchwork</a></p>
+    </div>
+  </section>
+
+  <!-- ============ PATRONES ============ -->
+  <section id="patrones">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="pat-eye"><b>Pieza 03</b> · Patrones en PDF</p>
+        <h2 data-i18n="pat-h2">Cose tu propia pieza</h2>
+        <span class="rule"></span>
+        <p data-i18n="pat-p">Nuestros diseños, explicados paso a paso para que los cosas en casa. Cada patrón incluye plantillas a tamaño real, tabla de materiales y guía fotográfica.</p>
+      </div>
+
+      <div class="grid-patterns">
+
+        <div class="pattern-card reveal">
+          <div class="p-block">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect width="100" height="100" fill="#EFE8D9"/>
+              <polygon points="0,33 50,0 100,33" fill="#7C93B5"/>
+              <polygon points="0,66 50,33 100,66" fill="#E8447E"/>
+              <polygon points="0,100 50,66 100,100" fill="#D9A441"/>
+            </svg>
+          </div>
+          <div class="p-body">
+            <h3 data-i18n="pn-1">Patrón · Neceser «Ocas»</h3>
+            <span class="lvl" data-i18n="lvl-beg">Nivel: principiante</span>
+            <p class="p-includes" data-i18n="pi-1">PDF · 14 páginas · plantillas a tamaño real · ideal como primer proyecto</p>
+            <div class="p-foot">
+              <span class="price-tag">8,00 €</span>
+              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pattern-card reveal">
+          <div class="p-block">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect width="100" height="100" fill="#EFE8D9"/>
+              <polygon points="0,0 50,0 50,50" fill="#8FA382"/>
+              <polygon points="100,0 100,50 50,50" fill="#D9A441"/>
+              <polygon points="100,100 50,100 50,50" fill="#8FA382"/>
+              <polygon points="0,100 0,50 50,50" fill="#D9A441"/>
+            </svg>
+          </div>
+          <div class="p-body">
+            <h3 data-i18n="pn-2">Patrón · Cojín «Molinillo»</h3>
+            <span class="lvl" data-i18n="lvl-beg">Nivel: principiante</span>
+            <p class="p-includes" data-i18n="pi-2">PDF · 10 páginas · técnica de half-square triangles · cierre con botones</p>
+            <div class="p-foot">
+              <span class="price-tag">6,00 €</span>
+              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pattern-card reveal">
+          <div class="p-block">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect width="100" height="100" fill="#EFE8D9"/>
+              <rect x="10" y="10" width="80" height="80" fill="#A9B8D4"/>
+              <rect x="20" y="20" width="60" height="60" fill="#F0A9C4"/>
+              <rect x="30" y="30" width="40" height="40" fill="#7C93B5"/>
+              <rect x="41" y="41" width="18" height="18" fill="#E8447E"/>
+            </svg>
+          </div>
+          <div class="p-body">
+            <h3 data-i18n="pn-3">Patrón · Bolso «Cabaña»</h3>
+            <span class="lvl" data-i18n="lvl-int">Nivel: intermedio</span>
+            <p class="p-includes" data-i18n="pi-3">PDF · 22 páginas · bloque log cabin · montaje de asas y forro</p>
+            <div class="p-foot">
+              <span class="price-tag">12,00 €</span>
+              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pattern-card reveal">
+          <div class="p-block">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect width="100" height="100" fill="#7C93B5"/>
+              <rect x="0" y="0" width="25" height="25" fill="#EFE8D9"/>
+              <rect x="75" y="0" width="25" height="25" fill="#EFE8D9"/>
+              <rect x="0" y="75" width="25" height="25" fill="#EFE8D9"/>
+              <rect x="75" y="75" width="25" height="25" fill="#EFE8D9"/>
+              <polygon points="25,25 50,0 75,25" fill="#F0A9C4"/>
+              <polygon points="25,75 50,100 75,75" fill="#F0A9C4"/>
+              <polygon points="25,25 0,50 25,75" fill="#F0A9C4"/>
+              <polygon points="75,25 100,50 75,75" fill="#F0A9C4"/>
+              <rect x="25" y="25" width="50" height="50" fill="#E8447E"/>
+            </svg>
+          </div>
+          <div class="p-body">
+            <h3 data-i18n="pn-4">Patrón · Manta «Estrella del Norte»</h3>
+            <span class="lvl" data-i18n="lvl-adv">Nivel: avanzado</span>
+            <p class="p-includes" data-i18n="pi-4">PDF · 36 páginas · tres tamaños de manta · guía de acolchado a mano</p>
+            <div class="p-foot">
+              <span class="price-tag">18,00 €</span>
+              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="pattern-note reveal" data-i18n="pat-note">Al comprar, recibirás el PDF por correo electrónico en menos de 24&nbsp;horas. De momento gestionamos los pedidos por mensaje directo de Instagram; pronto también con pago en línea.</p>
+    </div>
+  </section>
+
+  <!-- ============ VALORES ============ -->
+  <section id="valores">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="val-eye"><b>Pieza 04</b> · Nuestros valores</p>
+        <h2 data-i18n="val-h2">Tres hilos que lo cosen todo</h2>
+        <span class="rule"></span>
+      </div>
+
+      <div class="values-grid">
+        <div class="value stitched reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <line x1="4" y1="40" x2="40" y2="6" stroke="var(--rosa)" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+            <path d="M40 6 a4.5 4.5 0 1 1 -3 8 l 3 -8" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
+          </svg>
+          <h3 data-i18n="v1-h">Artesanía</h3>
+          <p data-i18n="v1-p">Cada pieza se corta, se compone y se cose una a una en nuestro taller. Sin producción en serie: la precisión que solo dan años de oficio.</p>
+        </div>
+        <div class="value stitched reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 6 a18 18 0 1 1 -17 12" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
+            <polygon points="24,0 24,12 15,6" fill="var(--rosa)"/>
+            <rect x="17" y="17" width="14" height="14" fill="var(--mustard)"/>
+          </svg>
+          <h3 data-i18n="v2-h">Sostenibilidad</h3>
+          <p data-i18n="v2-p">Trabajamos con upcycling: tejidos recuperados, vaqueros con historia y retales que merecen una segunda vida. Casi nada se desperdicia.</p>
+        </div>
+        <div class="value stitched reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="6" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <rect x="16" y="16" width="16" height="16" fill="var(--rosa)"/>
+          </svg>
+          <h3 data-i18n="v3-h">Exclusividad</h3>
+          <p data-i18n="v3-p">Series de una sola pieza. La combinación de telas de tu bolso no existe en ningún otro: cada creación es única e irrepetible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOSOTROS / NUESTRA HISTORIA ============ -->
+  <section id="nosotros">
+    <div class="wrap about-grid">
+      <div class="about-photos reveal" aria-hidden="true">
+        <img src="img/post-03.jpg" alt="" loading="lazy">
+        <img src="img/post-05.jpg" alt="" loading="lazy">
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow" data-i18n="nos-eye"><b>Pieza 05</b> · Sobre nosotros</p>
+        <h2 data-i18n="nos-h2">Nuestra historia</h2>
+        <p class="lead" data-i18n="nos-lead">Somos una pequeña familia española con una misión sencilla: crear piezas únicas.</p>
+        <p data-i18n="nos-p1">Clop nació en casa, entre telas heredadas, una máquina de coser de toda la vida y la costumbre de no tirar nada que aún pudiera ser bonito. Lo que empezó como retales sobre la mesa de la cocina es hoy un <strong>estudio de diseño textil</strong>.</p>
+        <p data-i18n="nos-p2">Diseñamos y cosemos complementos de patchwork —bolsos, neceseres, mantas, cojines— y compartimos nuestros patrones para quien quiera coserlos con sus propias manos. Cada pieza lleva horas de trabajo, criterio y cariño: esa precisión que solo la experiencia y la pasión pueden ofrecer.</p>
+        <a class="btn btn-ghost" href="https://www.instagram.com/clop_patchwork" data-i18n="nos-btn">Síguenos en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto">
+    <div class="wrap contact-grid">
+      <div class="contact-intro reveal">
+        <p class="eyebrow" data-i18n="con-eye"><b>Pieza 06</b> · Contacto</p>
+        <h2 data-i18n="con-h2">Hablemos de telas</h2>
+        <p data-i18n="con-p">¿Quieres reservar una pieza, encargar una a medida o comprar un patrón? El camino más rápido es un mensaje directo en Instagram.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.8" cy="6.2" r="1.3" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span><span class="eyebrow">Instagram</span><a href="https://www.instagram.com/clop_patchwork">@clop_patchwork</a></span>
+          </li>
+          <li>
+            <span class="contact-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5z"/>
+              </svg>
+            </span>
+            <span><span class="eyebrow" data-i18n="con-dm">Mensaje directo</span><a href="https://ig.me/m/clop_patchwork">ig.me/m/clop_patchwork</a></span>
+          </li>
+          <li>
+            <span class="contact-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 6 9 7 9-7"/>
+              </svg>
+            </span>
+            <span><span class="eyebrow" data-i18n="con-mail">Correo</span><a href="mailto:hola@cloppatchwork.es">hola@cloppatchwork.es</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="contact-form stitched reveal" action="mailto:hola@cloppatchwork.es" method="post">
+        <h3 data-i18n="form-h3">Escríbenos</h3>
+        <p class="form-sub" data-i18n="form-sub">Cuéntanos qué pieza te ha enamorado o qué te gustaría encargar.</p>
+        <div class="field">
+          <label for="f-name" data-i18n="form-name">Nombre</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-mail" data-i18n="form-mail">Correo</label>
+          <input id="f-mail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-msg" data-i18n="form-msg">Mensaje</label>
+          <textarea id="f-msg" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn btn-rosa" type="submit" data-i18n="form-send">Enviar</button>
+        <p class="form-note" data-i18n="form-note">Al pulsar «Enviar» se abrirá tu aplicación de correo con el mensaje preparado.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="foot-brand">
+      <img src="Logo.jpeg" alt="">
+      <span data-i18n="foot-1">© 2026 CLOP Patchwork · Estudio de diseño textil · España</span>
+    </span>
+    <span class="script" data-i18n="foot-2">Cosido a mano, retal a retal.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- i18n ---------- */
+  var EN = {
+    "nav-col":"Collection",
+    "nav-pat":"Patterns",
+    "nav-val":"Values",
+    "nav-nos":"About us",
+    "nav-con":"Contact",
+    "hero-script":"Handmade, scrap by scrap",
+    "hero-h1":"Sewing with heart, for your <em>home</em>.",
+    "hero-quote":"“Clop is not just an accessories brand: it is a textile design studio where every piece is crafted with a precision that only experience and passion can offer.”",
+    "cta-col":"View the collection",
+    "cta-pat":"Buy a pattern",
+    "selv-1":"Handmade in Spain",
+    "selv-2":"Reclaimed fabrics",
+    "col-eye":"<b>Piece 02</b> · Current collection",
+    "col-h2":"Pieces in progress",
+    "col-p":"Every accessory is cut, pieced and sewn in our studio. No piece is ever repeated: once it’s gone, it’s gone.",
+    "name-1":"Pouch «Flores de Tilda»",
+    "name-2":"Pouch «Vichy»",
+    "name-3":"Basket «Costurero»",
+    "name-4":"Knot bag «Nudo»",
+    "name-5":"Tote «Pájaros»",
+    "name-6":"Quilt «Flor»",
+    "name-7":"Bag «Corazones»",
+    "name-8":"Bag «Concha»",
+    "name-9":"Bag «Trenzado Denim»",
+    "name-10":"Cushions «Hogar»",
+    "name-11":"Crossbody «Flores»",
+    "name-12":"Bag «Denim Vintage»",
+    "mat-1":"“A gift that tastes of friendship. For this special commission I chose these Tilda fabrics: they have that romantic, delicate touch.” A practical design that opens up completely.",
+    "mat-2":"“It wasn’t born from needle and thread alone, but from the wish to make something unique for my daughter.” Stripes and gingham checks: cheerful, modern, full of character; it unfolds completely when unzipped.",
+    "mat-3":"“It was born as a sewing basket, but it’s much more: a travel pouch, a picnic basket, a craft organiser or a little case for the essentials.” Sturdy handles and plenty of room.",
+    "mat-4":"“Some days call for lightness, and for pieces that simply go with everything. The perfect balance between modern design and handmade soul”, worked in a very special yarn.",
+    "mat-5":"“A wish to bring together worlds that seem different but share the same handmade heart.” Painting on fabric — birds in vibrant colours — over patchwork: a journey of textures and techniques.",
+    "mat-6":"“Some pieces aren’t just made… they are built stitch by stitch. Every flower is sewn by hand, as if each scrap were a small memory finding its place.”",
+    "mat-7":"“Some bags feel like home.” Quilting, patchwork and hand-sewn appliqués that recall the needlework of days gone by. No rush. With intention.",
+    "mat-8":"“Inspired by my grandmother Concha: her fabrics, her ever-creating hands, her way of turning scraps into something precious.” Classic frame, earthy tones and a metal clasp.",
+    "mat-9":"“A design you already know, but with a new story to tell. Same pattern, new energy: new fabrics, new textures, the same handmade essence.”",
+    "mat-10":"“Your sofa deserves pieces that say more than comfort. Unique cushions, full of details and heart.” Log cabin blocks with appliqué and hand embroidery.",
+    "mat-11":"“Handmade, slowly and with great dedication. Not just an accessory: a one-of-a-kind piece full of texture and colour. Because handmade always has a story to tell.”",
+    "mat-12":"“When vintage denim becomes art. Handmade, with history and soul. A one-of-a-kind piece — because so are you.” Vintage clasp and metal chain.",
+    "see-post":"See the post →",
+    "chip-uni":"One of a kind",
+    "chip-ord":"Made to order",
+    "chip-sold":"Sold",
+    "uniq-note":"To reserve a piece or commission a custom one, message us on Instagram: <a href=\"https://ig.me/m/clop_patchwork\">@clop_patchwork</a>",
+    "pat-eye":"<b>Piece 03</b> · PDF patterns",
+    "pat-h2":"Sew your own piece",
+    "pat-p":"Our designs, explained step by step so you can sew them at home. Every pattern includes full-size templates, a materials chart and a photo guide.",
+    "pn-1":"Pattern · Pouch «Ocas»",
+    "pn-2":"Pattern · Cushion «Molinillo»",
+    "pn-3":"Pattern · Bag «Cabaña»",
+    "pn-4":"Pattern · Quilt «Estrella del Norte»",
+    "lvl-beg":"Level: beginner",
+    "lvl-int":"Level: intermediate",
+    "lvl-adv":"Level: advanced",
+    "pi-1":"PDF · 14 pages · full-size templates · an ideal first project",
+    "pi-2":"PDF · 10 pages · half-square triangle technique · button closure",
+    "pi-3":"PDF · 22 pages · log cabin block · handles and lining assembly",
+    "pi-4":"PDF · 36 pages · three quilt sizes · hand-quilting guide",
+    "buy":"Buy",
+    "pat-note":"After purchase you’ll receive the PDF by email within 24 hours. For now we handle orders through Instagram direct messages; online payment is coming soon.",
+    "val-eye":"<b>Piece 04</b> · Our values",
+    "val-h2":"Three threads that stitch it all together",
+    "v1-h":"Craftsmanship",
+    "v1-p":"Every piece is cut, pieced and sewn one by one in our studio. No mass production: the precision that only years of craft can give.",
+    "v2-h":"Sustainability",
+    "v2-p":"We work with upcycling: reclaimed fabrics, jeans with a history and scraps that deserve a second life. Almost nothing goes to waste.",
+    "v3-h":"Exclusivity",
+    "v3-p":"One-piece series. The fabric combination of your bag exists nowhere else: every creation is unique and unrepeatable.",
+    "nos-eye":"<b>Piece 05</b> · About us",
+    "nos-h2":"Our story",
+    "nos-lead":"We are a small Spanish family with a simple mission: to create unique, handcrafted pieces.",
+    "nos-p1":"Clop was born at home, among inherited fabrics, a trusty old sewing machine and the habit of never throwing away anything that could still be beautiful. What began as scraps on the kitchen table is today a <strong>textile design studio</strong>.",
+    "nos-p2":"We design and sew patchwork accessories — bags, pouches, quilts, cushions — and we share our patterns with anyone who wants to sew them with their own hands. Every piece carries hours of work, judgement and care: that precision that only experience and passion can offer.",
+    "nos-btn":"Follow us on Instagram",
+    "con-eye":"<b>Piece 06</b> · Contact",
+    "con-h2":"Let’s talk fabrics",
+    "con-p":"Want to reserve a piece, commission a custom one or buy a pattern? The fastest way is a direct message on Instagram.",
+    "con-dm":"Direct message",
+    "con-mail":"Email",
+    "form-h3":"Write to us",
+    "form-sub":"Tell us which piece stole your heart, or what you’d like to commission.",
+    "form-name":"Name",
+    "form-mail":"Email",
+    "form-msg":"Message",
+    "form-send":"Send",
+    "form-note":"Pressing “Send” will open your email app with the message ready to go.",
+    "foot-1":"© 2026 CLOP Patchwork · Textile design studio · Spain",
+    "foot-2":"Hand-sewn, scrap by scrap."
+  };
+  var TITLES = {
+    es: "CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano en España",
+    en: "CLOP Patchwork · Handmade patchwork bags and accessories from Spain"
+  };
+  var current = "es";
+  var btn = document.getElementById("lang-toggle");
+
+  function setLang(lang){
+    var els = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < els.length; i++){
+      var el = els[i];
+      var key = el.getAttribute("data-i18n");
+      if (el.getAttribute("data-es") === null) el.setAttribute("data-es", el.innerHTML);
+      if (lang === "en" && EN[key]) el.innerHTML = EN[key];
+      if (lang === "es") el.innerHTML = el.getAttribute("data-es");
+    }
+    current = lang;
+    document.documentElement.lang = lang;
+    document.title = TITLES[lang];
+    btn.textContent = lang === "en" ? "ES" : "EN";
+    try { localStorage.setItem("clop-lang", lang); } catch(e){}
+  }
+
+  btn.addEventListener("click", function(){ setLang(current === "en" ? "es" : "en"); });
+
+  var saved = null;
+  try { saved = localStorage.getItem("clop-lang"); } catch(e){}
+  if (saved === "en") setLang("en");
+
+  /* ---------- mobile menu ---------- */
+  var menuBtn = document.getElementById("menu-btn");
+  var mobileMenu = document.getElementById("mobile-menu");
+  menuBtn.addEventListener("click", function(){
+    var open = mobileMenu.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  mobileMenu.addEventListener("click", function(e){
+    if (e.target.tagName === "A"){
+      mobileMenu.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".reveal");
+  if (reduced || !("IntersectionObserver" in window)){
+    for (var j = 0; j < items.length; j++) items[j].classList.add("in");
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin:"0px 0px -8% 0px", threshold:.08 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- contact form → mailto ---------- */
+  var form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("f-name").value.trim();
+    var mail = document.getElementById("f-mail").value.trim();
+    var msg  = document.getElementById("f-msg").value.trim();
+    var subject = (current === "en" ? "Enquiry from the website — " : "Consulta desde la web — ") + name;
+    var body = msg + "\n\n— " + name + " (" + mail + ")";
+    window.location.href = "mailto:hola@cloppatchwork.es?subject=" +
+      encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "OnlineStore",
+   "@id": "https://www.cloppatchwork.es/#tienda",
+   "name": "CLOP Patchwork",
+   "alternateName": "Clop",
+   "description": "Estudio de diseño textil familiar en España. Bolsos, neceseres, colchas y cojines de patchwork hechos a mano, muchos con tejidos recuperados (upcycling), y patrones de costura en PDF. Creaciones únicas e irrepetibles.",
+   "url": "https://www.cloppatchwork.es/",
+   "email": "hola@cloppatchwork.es",
+   "logo": "https://www.cloppatchwork.es/Logo.jpeg",
+   "sameAs": [
+    "https://www.instagram.com/clop_patchwork"
+   ],
+   "areaServed": "ES",
+   "knowsLanguage": "es",
+   "keywords": "patchwork, quilting, bolsos artesanales, upcycling, patrones de costura, hecho a mano, España"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.cloppatchwork.es/#web",
+   "url": "https://www.cloppatchwork.es/",
+   "name": "CLOP Patchwork",
+   "inLanguage": "es",
+   "publisher": {
+    "@id": "https://www.cloppatchwork.es/#tienda"
+   }
+  },
+  {
+   "@type": "ItemList",
+   "name": "Colección de piezas de patchwork",
+   "itemListElement": [
+    {
+     "@type": "Product",
+     "position": 1,
+     "name": "Neceser «Flores de Tilda» · patchwork hecho a mano",
+     "description": "Neceser de patchwork acolchado con telas florales de Tilda. Encargo especial, modelo práctico que se abre por completo. Hecho a mano.",
+     "image": "https://www.cloppatchwork.es/img/post-01.jpg",
+     "url": "https://www.instagram.com/p/DaLepSoDUeJ/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 2,
+     "name": "Neceser «Vichy» · patchwork hecho a mano",
+     "description": "Neceser de patchwork con triángulos de rayas y cuadros vichy; se despliega por completo al abrir la cremallera. Hecho a mano.",
+     "image": "https://www.cloppatchwork.es/img/post-02.jpg",
+     "url": "https://www.instagram.com/p/DaAqsqwDSTk/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 3,
+     "name": "Cesta «Costurero» · patchwork hecho a mano",
+     "description": "Cesta de patchwork multiusos con flores aplicadas: costurero, neceser de viaje, cesta de pícnic u organizador. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-03.jpg",
+     "url": "https://www.instagram.com/p/DZxLSltDaci/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 4,
+     "name": "Bolso «Nudo» · patchwork hecho a mano",
+     "description": "Bolso de nudo japonés tejido a mano con hilo especial. Ligero, moderno y artesanal. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-04.jpg",
+     "url": "https://www.instagram.com/p/DXzJqHMjcg0/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 5,
+     "name": "Bolso «Pájaros» · patchwork hecho a mano",
+     "description": "Bolso tote con pájaros pintados a mano sobre tela y patchwork de batiks. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-05.jpg",
+     "url": "https://www.instagram.com/p/DWcHRPNDVja/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 6,
+     "name": "Colcha «Flor» · patchwork hecho a mano",
+     "description": "Colcha de patchwork con flor Dresden, cosida y acolchada a mano puntada a puntada. Por encargo.",
+     "image": "https://www.cloppatchwork.es/img/post-06.jpg",
+     "url": "https://www.instagram.com/p/DVqdCPjDdwy/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 7,
+     "name": "Bolso «Corazones» · patchwork hecho a mano",
+     "description": "Bolso acolchado con aplicaciones de corazones, mariposas y muñeca cosidas a mano. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-07.jpg",
+     "url": "https://www.instagram.com/p/DVY9vseDR3a/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 8,
+     "name": "Bolso «Concha» · patchwork hecho a mano",
+     "description": "Bolso clásico de boquilla con bloque de patchwork en espiral, tonos tierra y asas de cuero. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-08.jpg",
+     "url": "https://www.instagram.com/p/DVQrR4vDVBE/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 9,
+     "name": "Bolso «Trenzado Denim» · patchwork hecho a mano",
+     "description": "Bolso triangular de tela vaquera entretejida en damero con flecos. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-09.jpg",
+     "url": "https://www.instagram.com/p/DVOYC4Ujaa5/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 10,
+     "name": "Cojines «Hogar» · patchwork hecho a mano",
+     "description": "Cojines de patchwork log cabin con aplicaciones y bordado artesanal.",
+     "image": "https://www.cloppatchwork.es/img/post-10.jpg",
+     "url": "https://www.instagram.com/p/DUdnmYNjTYe/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 11,
+     "name": "Bandolera «Flores» · patchwork hecho a mano",
+     "description": "Bandolera acolchada con flores de tela aplicadas a mano, textura y color. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-11.jpg",
+     "url": "https://www.instagram.com/p/DS3L3Q1jZ7X/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 12,
+     "name": "Bolso «Denim Vintage» · patchwork hecho a mano",
+     "description": "Bolso de boquilla vintage hecho con denim reciclado y cadena metálica. Pieza única.",
+     "image": "https://www.cloppatchwork.es/img/post-12.jpg",
+     "url": "https://www.instagram.com/p/DSS0CkDjUhc/",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "name": "Patrones de costura en PDF",
+   "itemListElement": [
+    {
+     "@type": "Product",
+     "position": 1,
+     "name": "Patrón PDF · Neceser",
+     "description": "Patrón de costura de patchwork descargable de nivel principiante, con plantillas a tamaño real y guía fotográfica.",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     },
+     "offers": {
+      "@type": "Offer",
+      "price": "8.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.cloppatchwork.es/#patrones"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 2,
+     "name": "Patrón PDF · Cojín",
+     "description": "Patrón de costura de patchwork descargable de nivel principiante, técnica de half-square triangles.",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     },
+     "offers": {
+      "@type": "Offer",
+      "price": "6.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.cloppatchwork.es/#patrones"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 3,
+     "name": "Patrón PDF · Bolso",
+     "description": "Patrón de costura de patchwork descargable de nivel intermedio, bloque log cabin con montaje de asas y forro.",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     },
+     "offers": {
+      "@type": "Offer",
+      "price": "12.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.cloppatchwork.es/#patrones"
+     }
+    },
+    {
+     "@type": "Product",
+     "position": 4,
+     "name": "Patrón PDF · Manta",
+     "description": "Patrón de costura de patchwork descargable de nivel avanzado, tres tamaños y guía de acolchado a mano.",
+     "brand": {
+      "@type": "Brand",
+      "name": "CLOP Patchwork"
+     },
+     "offers": {
+      "@type": "Offer",
+      "price": "18.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.cloppatchwork.es/#patrones"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</body>
+</html>

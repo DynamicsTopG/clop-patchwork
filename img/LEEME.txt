@@ -1,0 +1,22 @@
+CARPETA DE IMAGENES — CLOP Patchwork
+=====================================
+
+post-01.jpg ... post-12.jpg son las fotos de los 12 posts mas
+recientes de @clop_patchwork (descargadas el 04-07-2026) y son las
+que usa la web en la seccion "Piezas en curso".
+
+Para cambiar la foto de un producto, sustituye el archivo
+correspondiente manteniendo el mismo nombre:
+
+  post-01.jpg  Neceser "Flores de Tilda"
+  post-02.jpg  Neceser "Vichy"
+  post-03.jpg  Cesta "Costurero"
+  post-04.jpg  Bolso "Nudo"
+  post-05.jpg  Bolso "Pajaros"
+  post-06.jpg  Colcha "Flor"
+  post-07.jpg  Bolso "Corazones"
+  post-08.jpg  Bolso "Concha"  (tambien es la imagen al compartir el enlace)
+  post-09.jpg  Bolso "Trenzado Denim"
+  post-10.jpg  Cojines "Hogar"
+  post-11.jpg  Bandolera "Flores"
+  post-12.jpg  Bolso "Denim Vintage"
