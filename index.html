@@ -9,7 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#F6F1E7">
 <link rel="canonical" href="https://www.cloppatchwork.es/">
-<link rel="icon" href="Logo.jpeg">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="Logo.jpeg">
 <!-- Open Graph (Facebook, Instagram, WhatsApp) -->
 <meta property="og:type" content="website">
@@ -170,12 +170,11 @@
     text-decoration:none; color:var(--ink);
   }
   .brand-logo{
-    width:3rem; height:3rem; border-radius:50%;
-    background:#fff; box-shadow:var(--shadow);
-    display:grid; place-items:center; overflow:hidden;
+    width:3rem; height:3rem;
+    display:grid; place-items:center;
     flex:none;
   }
-  .brand-logo img{ width:86%; height:86%; object-fit:contain; display:block; }
+  .brand-logo img{ width:100%; height:100%; object-fit:contain; display:block; }
   .brand-name{
     font-family:var(--font-display); font-size:1.35rem; letter-spacing:.14em;
     line-height:1;
@@ -242,11 +241,17 @@
   .hero-frame > img{
     position:absolute; inset:0; width:100%; height:100%;
     object-fit:cover; object-position:center 58%;
-    animation:hero-drift 14s ease-in-out infinite alternate;
   }
-  @keyframes hero-drift{
-    from{ transform:scale(1.02); }
-    to{ transform:scale(1.12) translate(-1.8%, 2%); }
+  .hero-frame::before{
+    content:""; position:absolute; inset:.8rem; z-index:1;
+    border:2.5px dashed rgba(255,255,255,.92);
+    border-radius:calc(var(--r-big) - .6rem);
+    filter:drop-shadow(0 1px 2px rgba(58,51,44,.35));
+    pointer-events:none;
+    --stitch:360deg;
+    -webkit-mask:conic-gradient(from -40deg, #000 var(--stitch), transparent var(--stitch));
+    mask:conic-gradient(from -40deg, #000 var(--stitch), transparent var(--stitch));
+    animation:stitch-draw 3.2s ease-in-out .3s both;
   }
   .hero-frame::after{
     content:""; position:absolute; inset:0;
@@ -311,12 +316,7 @@
     color:var(--ink-soft);
   }
   .dots{ display:inline-flex; gap:.4rem; }
-  .dots i{ width:.55rem; height:.55rem; border-radius:50%; display:inline-block;
-           animation:dot-bob 2.6s ease-in-out infinite; }
-  .dots i:nth-child(2){ animation-delay:.32s; }
-  .dots i:nth-child(3){ animation-delay:.64s; }
-  .dots i:nth-child(4){ animation-delay:.96s; }
-  @keyframes dot-bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-.3rem); } }
+  .dots i{ width:.55rem; height:.55rem; border-radius:50%; display:inline-block; }
 
   /* ============ REVEAL ON SCROLL ============ */
   .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
@@ -559,9 +559,8 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .hero-card > *{ animation:none; opacity:1; }
-    .hero-frame > img{ animation:none; }
     .hero-card::after{ animation:none; -webkit-mask:none; mask:none; }
-    .dots i{ animation:none; }
+    .hero-frame::before{ animation:none; -webkit-mask:none; mask:none; }
     .reveal{ opacity:1; transform:none; transition:none; }
     .card,.pattern-card,.btn{ transition:none; }
   }
@@ -573,7 +572,7 @@
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top" aria-label="CLOP Patchwork — inicio">
-        <span class="brand-logo"><img src="Logo.jpeg" alt="Logotipo de CLOP: dos manos formando una C"></span>
+        <span class="brand-logo"><img src="logo.svg" alt="Logotipo de CLOP: dos manos formando una C"></span>
         <span>
           <span class="brand-name">CLOP</span>
           <span class="brand-sub">Hand Made</span>
@@ -1066,7 +1065,7 @@
 <footer>
   <div class="wrap foot-row">
     <span class="foot-brand">
-      <img src="Logo.jpeg" alt="">
+      <img src="logo.svg" alt="">
       <span data-i18n="foot-1">© 2026 CLOP Patchwork · Estudio de diseño textil · España</span>
     </span>
     <span class="script" data-i18n="foot-2">Cosido a mano, retal a retal.</span>
