@@ -242,6 +242,11 @@
   .hero-frame > img{
     position:absolute; inset:0; width:100%; height:100%;
     object-fit:cover; object-position:center 58%;
+    animation:hero-drift 24s ease-in-out infinite alternate;
+  }
+  @keyframes hero-drift{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.07) translate(-1.2%, 1.4%); }
   }
   .hero-frame::after{
     content:""; position:absolute; inset:0;
@@ -264,7 +269,13 @@
     border:1.5px dashed var(--seam);
     border-radius:calc(var(--r-big) - .5rem);
     pointer-events:none;
+    --stitch:360deg;
+    -webkit-mask:conic-gradient(from -40deg, #000 var(--stitch), transparent var(--stitch));
+    mask:conic-gradient(from -40deg, #000 var(--stitch), transparent var(--stitch));
+    animation:stitch-draw 2.2s ease-in-out .4s both;
   }
+  @property --stitch{ syntax:'<angle>'; initial-value:360deg; inherits:false; }
+  @keyframes stitch-draw{ from{ --stitch:0deg; } to{ --stitch:360deg; } }
   .hero-card > *{ position:relative; z-index:1; }
   .hero-card .script{ font-size:1.5rem; display:block; margin-bottom:.4rem; }
   .hero-card h1{ font-size:clamp(1.9rem,4.6vw,2.75rem); margin-bottom:.9rem; }
@@ -276,11 +287,11 @@
     .hero-card{ margin:1rem; max-width:none; }
   }
   /* gentle entrance */
-  .hero-card > *{ opacity:0; animation:settle .7s ease-out forwards; }
-  .hero-card > *:nth-child(2){ animation-delay:.1s; }
-  .hero-card > *:nth-child(3){ animation-delay:.2s; }
-  .hero-card > *:nth-child(4){ animation-delay:.3s; }
-  @keyframes settle{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  .hero-card > *{ opacity:0; animation:settle .9s cubic-bezier(.22,.8,.35,1) forwards; }
+  .hero-card > *:nth-child(2){ animation-delay:.18s; }
+  .hero-card > *:nth-child(3){ animation-delay:.36s; }
+  .hero-card > *:nth-child(4){ animation-delay:.54s; }
+  @keyframes settle{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
 
   /* ============ SELVAGE STRIP ============ */
   .selvage{
@@ -543,6 +554,8 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .hero-card > *{ animation:none; opacity:1; }
+    .hero-frame > img{ animation:none; }
+    .hero-card::after{ animation:none; -webkit-mask:none; mask:none; }
     .reveal{ opacity:1; transform:none; transition:none; }
     .card,.pattern-card,.btn{ transition:none; }
   }
