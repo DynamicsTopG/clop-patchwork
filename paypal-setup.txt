@@ -1,0 +1,59 @@
+PAYPAL CHECKOUT SETUP — CLOP Patchwork PDF patterns
+====================================================
+The site is already wired: it just needs 4 PayPal links pasted in.
+Until then, Buy buttons keep falling back to Instagram DM.
+
+----------------------------------------------------
+STEP 1 — PayPal Business account (free)
+----------------------------------------------------
+- Go to https://www.paypal.com/es/business and create a Business
+  account (or upgrade the personal one). Use the CLOP email.
+- Business type: "Individual/Sole trader" is fine to start.
+- Link the bank account where you want payouts.
+- IMPORTANT (security): in Settings, turn on 2-step verification.
+
+----------------------------------------------------
+STEP 2 — create one payment link per pattern
+----------------------------------------------------
+In the PayPal Business dashboard:
+  Pay & Get Paid  →  Pay Links and Buttons  →  Create pay link
+
+Create these 4, one at a time (fixed price, EUR):
+
+  1. Patrón · Neceser «Ocas»              8,00 €
+  2. Patrón · Cojín «Molinillo»           6,00 €
+  3. Patrón · Bolso «Cabaña»             12,00 €
+  4. Patrón · Manta «Estrella del Norte» 18,00 €
+
+For each one PayPal gives you a link like:
+  https://www.paypal.com/ncp/payment/XXXXXXXXXXXX
+Copy all 4 links (note which is which).
+
+----------------------------------------------------
+STEP 3 — hand the links to Claude
+----------------------------------------------------
+Paste the 4 links in the chat and say "add the paypal links".
+They go into the PAYPAL_LINKS block in index.html; the Buy buttons
+switch from Instagram DM to PayPal checkout automatically, and the
+note under the patterns updates to "Pago seguro a través de PayPal".
+
+----------------------------------------------------
+STEP 4 — delivery of the PDF
+----------------------------------------------------
+PayPal emails you on every sale (buyer name + email + which link).
+Reply to the buyer's email with the PDF attached, within 24h —
+exactly what the site promises. Later, if sales pick up, we can
+automate delivery, but manual keeps it simple and free.
+
+----------------------------------------------------
+WHY THIS IS THE SECURE WAY
+----------------------------------------------------
+- The buyer pays on paypal.com, never on your site. Card numbers
+  never touch your page or your GitHub repo.
+- Prices are fixed inside PayPal — nobody can edit the page or the
+  link to pay less.
+- The site only accepts links matching https://www.paypal.com/...
+  so a typo or a tampered link can never hijack the Buy buttons.
+- There are no API keys, passwords or secrets in the website code
+  (nothing to steal from a public repo).
+- PayPal handles buyer/seller protection, refunds and disputes.

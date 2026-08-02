@@ -851,7 +851,7 @@
             <p class="p-includes" data-i18n="pi-1">PDF · 14 páginas · plantillas a tamaño real · ideal como primer proyecto</p>
             <div class="p-foot">
               <span class="price-tag">8,00 €</span>
-              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+              <a class="btn btn-rosa btn-sm" data-pat="ocas" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
             </div>
           </div>
         </div>
@@ -872,7 +872,7 @@
             <p class="p-includes" data-i18n="pi-2">PDF · 10 páginas · técnica de half-square triangles · cierre con botones</p>
             <div class="p-foot">
               <span class="price-tag">6,00 €</span>
-              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+              <a class="btn btn-rosa btn-sm" data-pat="molinillo" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
             </div>
           </div>
         </div>
@@ -893,7 +893,7 @@
             <p class="p-includes" data-i18n="pi-3">PDF · 22 páginas · bloque log cabin · montaje de asas y forro</p>
             <div class="p-foot">
               <span class="price-tag">12,00 €</span>
-              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+              <a class="btn btn-rosa btn-sm" data-pat="cabana" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
             </div>
           </div>
         </div>
@@ -919,7 +919,7 @@
             <p class="p-includes" data-i18n="pi-4">PDF · 36 páginas · tres tamaños de manta · guía de acolchado a mano</p>
             <div class="p-foot">
               <span class="price-tag">18,00 €</span>
-              <a class="btn btn-rosa btn-sm" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
+              <a class="btn btn-rosa btn-sm" data-pat="estrella" href="https://ig.me/m/clop_patchwork" data-i18n="buy">Comprar</a>
             </div>
           </div>
         </div>
@@ -1221,6 +1221,31 @@
     window.location.href = "mailto:hola@cloppatchwork.es?subject=" +
       encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
+
+  /* ---------- PayPal checkout for PDF patterns ----------
+     Paste each pattern's PayPal checkout link below (PayPal Business →
+     Pay Links and Buttons). Prices are fixed on PayPal's side, so the
+     page never handles money or card data. While a link is empty, that
+     button keeps the Instagram DM fallback. */
+  var PAYPAL_LINKS = {
+    ocas:      "",   // Patrón · Neceser «Ocas» — 8,00 €
+    molinillo: "",   // Patrón · Cojín «Molinillo» — 6,00 €
+    cabana:    "",   // Patrón · Bolso «Cabaña» — 12,00 €
+    estrella:  ""    // Patrón · Manta «Estrella del Norte» — 18,00 €
+  };
+  var payLive = false;
+  document.querySelectorAll("[data-pat]").forEach(function(a){
+    var link = PAYPAL_LINKS[a.getAttribute("data-pat")];
+    if (link && /^https:\/\/(www\.)?paypal\.com\//.test(link)){
+      a.href = link;
+      payLive = true;
+    }
+  });
+  if (payLive){
+    var note = document.querySelector('[data-i18n="pat-note"]');
+    if (note) note.innerHTML = "Pago seguro a través de PayPal (tarjeta o cuenta PayPal). Recibirás el PDF por correo electrónico en menos de 24&nbsp;horas.";
+    EN["pat-note"] = "Secure payment through PayPal (card or PayPal account). You’ll receive the PDF by email within 24 hours.";
+  }
 
   /* ---------- external links open in a new tab ---------- */
   document.querySelectorAll('a[href^="http"]').forEach(function(a){

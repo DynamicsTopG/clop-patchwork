@@ -1,0 +1,30 @@
+DNS RECORDS FOR cloppatchwork.es  →  GitHub Pages
+==================================================
+Add these 5 records in your registrar's DNS panel.
+Delete any pre-existing "parking" A or CNAME records first.
+
+--------------------------------------------------
+1) Four A records (make cloppatchwork.es work)
+--------------------------------------------------
+Type: A      Host/Name: @      Value: 185.199.108.153
+Type: A      Host/Name: @      Value: 185.199.109.153
+Type: A      Host/Name: @      Value: 185.199.110.153
+Type: A      Host/Name: @      Value: 185.199.111.153
+
+--------------------------------------------------
+2) One CNAME record (makes www.cloppatchwork.es work)
+--------------------------------------------------
+Type: CNAME  Host/Name: www    Value: dynamicstopg.github.io
+
+--------------------------------------------------
+Notes
+--------------------------------------------------
+- "Host" is sometimes called "Name". "@" means the bare domain;
+  some panels want it left empty instead of "@".
+- TTL: leave the default (usually 3600 / 1 hour).
+- Do NOT add a trailing dot problem: if the panel auto-appends the
+  domain, "www" is enough — not "www.cloppatchwork.es".
+- Propagation takes minutes to a few hours.
+
+After the records are in, tell Claude "the DNS is set" and the
+GitHub side (custom domain + HTTPS) will be configured for you.
