@@ -1221,6 +1221,12 @@
     window.location.href = "mailto:hola@cloppatchwork.es?subject=" +
       encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
+
+  /* ---------- external links open in a new tab ---------- */
+  document.querySelectorAll('a[href^="http"]').forEach(function(a){
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
 })();
 </script>
 
