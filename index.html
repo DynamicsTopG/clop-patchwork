@@ -211,32 +211,67 @@
     color:var(--ink); cursor:pointer;
     place-items:center;
   }
+  /* slide-in drawer (mobile) */
   .mobile-menu{
-    display:none;
-    border-top:1.5px dashed var(--seam);
-    padding:.8rem 0 1rem;
+    position:fixed; top:0; left:0; bottom:0; z-index:70;
+    width:min(19rem,82vw);
+    background:var(--linen);
+    border-right:1.5px dashed var(--seam-strong);
+    padding:4.5rem 2rem 2rem;
+    display:flex; flex-direction:column; gap:.15rem;
+    box-shadow:var(--shadow-lift);
+    transform:translateX(-105%);
+    visibility:hidden;
+    transition:transform .32s cubic-bezier(.4,.7,.3,1), visibility .32s;
   }
+  .mobile-menu.open{ transform:none; visibility:visible; }
   .mobile-menu a{
-    display:block; padding:.55rem 0;
-    color:var(--ink); text-decoration:none; font-weight:600;
+    display:block; padding:.65rem 0;
+    color:var(--ink); text-decoration:none; font-weight:600; font-size:1.08rem;
   }
   .mobile-menu a:hover{ color:var(--rosa-deep); }
+  .mobile-menu .menu-ig{
+    margin-top:1.1rem; padding-top:1.1rem;
+    border-top:1.5px dashed var(--seam);
+    color:var(--rosa-deep);
+  }
+  .mobile-menu .menu-ig small{
+    display:block; font-size:.8rem; font-weight:400; color:var(--ink-soft);
+  }
+  .menu-backdrop{
+    position:fixed; inset:0; z-index:65;
+    background:rgba(58,51,44,.38);
+    opacity:0; visibility:hidden;
+    transition:opacity .3s ease, visibility .3s;
+  }
+  .menu-backdrop.open{ opacity:1; visibility:visible; }
+  body.menu-open{ overflow:hidden; }
+  @media (min-width:47.01rem){
+    .mobile-menu,.menu-backdrop{ display:none; }
+  }
   @media (max-width:47rem){
     .nav-links{ display:none; }
     .menu-btn{ display:grid; }
-    .mobile-menu.open{ display:block; }
+    /* concept layout: hamburger left · logo centered · Instagram right */
+    .nav{ position:relative; justify-content:space-between; }
+    .brand{
+      position:absolute; left:50%; top:50%;
+      transform:translate(-50%,-50%);
+    }
     .brand-name{ font-size:1.15rem; }
+    .lang-toggle{ padding:.42rem .6rem; }
   }
 
   /* ============ HERO ============ */
   .hero{ padding-block:clamp(1.4rem,3.5vw,2.6rem) clamp(3rem,6vw,4.5rem); }
+  .hero-layout{ display:grid; }
+  .hero-layout > *{ grid-area:1/1; }
   .hero-frame{
     position:relative;
     border-radius:var(--r-big);
     overflow:hidden;
     box-shadow:var(--shadow-lift);
     min-height:clamp(26rem,58vw,34rem);
-    display:flex; align-items:center;
   }
   .hero-frame > img{
     position:absolute; inset:0; width:100%; height:100%;
@@ -259,7 +294,7 @@
   .hero-stitch .stitch-reveal-path{
     stroke:#fff; stroke-width:8px;
     stroke-dasharray:100 100; stroke-dashoffset:100;
-    animation:stitch-run 1s linear .2s forwards;
+    animation:stitch-run 2.2s linear .2s forwards;
   }
   @keyframes stitch-run{ to{ stroke-dashoffset:0; } }
   .hero-frame::after{
@@ -269,8 +304,8 @@
   }
   .hero-card{
     position:relative; z-index:2;
+    align-self:center; justify-self:end;
     margin:clamp(1.2rem,4vw,3rem);
-    margin-left:auto;
     max-width:30rem;
     padding:clamp(1.6rem,4vw,2.6rem);
     background:color-mix(in srgb, var(--card) 94%, transparent);
@@ -297,8 +332,24 @@
   .hero-card p{ color:var(--ink-soft); margin-bottom:1.4rem; }
   .hero-ctas{ display:flex; gap:.8rem; flex-wrap:wrap; }
   @media (max-width:47rem){
-    .hero-frame{ align-items:flex-end; }
-    .hero-card{ margin:1rem; max-width:none; }
+    /* concept layout: photo on top, text below on the linen ground */
+    .hero-layout{ display:block; }
+    .hero-frame{ min-height:0; }
+    .hero-frame > img{
+      position:static; display:block;
+      width:100%; height:auto; aspect-ratio:4/3;
+    }
+    .hero-frame::after{ display:none; }
+    .hero-card{
+      margin:1.5rem .2rem 0; max-width:none;
+      padding:0;
+      background:transparent; backdrop-filter:none;
+      box-shadow:none; border-radius:0;
+      text-align:center;
+    }
+    .hero-card::after{ display:none; }
+    .hero-card h1{ font-size:clamp(1.7rem,7.5vw,2.2rem); }
+    .hero-ctas{ justify-content:center; }
   }
   /* gentle entrance */
   .hero-card > *{ opacity:0; animation:settle .9s cubic-bezier(.22,.8,.35,1) forwards; }
@@ -395,6 +446,37 @@
   .unique-note::before{
     content:""; width:2.4rem; height:0;
     border-top:2px dashed var(--rosa);
+  }
+  @media (max-width:47rem){
+    /* concept layout: compact horizontal cards — thumbnail left, text right */
+    .grid-products{ grid-template-columns:1fr; gap:.9rem; }
+    .card{
+      display:grid; grid-template-columns:6.4rem 1fr;
+      align-items:center;
+    }
+    .card:hover{ transform:none; }
+    a.card-art{ align-self:stretch; }
+    .card-photo{
+      width:100%; height:100%; aspect-ratio:auto;
+      min-height:6.4rem;
+    }
+    .card-body{
+      border-top:none;
+      border-left:1.5px dashed var(--seam);
+      padding:.85rem 1rem .9rem;
+      gap:.3rem;
+    }
+    .card-body h3{ font-size:1.08rem; }
+    .card-body .mat{
+      font-size:.82rem;
+      display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .card-meta{
+      margin-top:.2rem; padding-top:.55rem;
+      flex-wrap:wrap; gap:.5rem;
+    }
+    .chip{ font-size:.62rem; padding:.22rem .55rem .22rem 1.05rem; }
   }
 
   /* ============ PATRONES ============ */
@@ -571,6 +653,7 @@
     .hero-stitch .stitch-reveal-path{ animation:none; stroke-dashoffset:0; }
     .reveal{ opacity:1; transform:none; transition:none; }
     .card,.pattern-card,.btn{ transition:none; }
+    .mobile-menu,.menu-backdrop{ transition:none; }
   }
 </style>
 </head>
@@ -579,6 +662,11 @@
 <header>
   <div class="wrap">
     <div class="nav">
+      <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <a class="brand" href="#top" aria-label="CLOP Patchwork — inicio">
         <span class="brand-logo"><img src="logo.svg" alt="Logotipo de CLOP: dos manos formando una C"></span>
         <span>
@@ -602,38 +690,38 @@
           </svg>
         </a>
         <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language / Cambiar idioma">EN</button>
-        <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
       </div>
     </div>
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Secciones (móvil)">
-      <a href="#coleccion" data-i18n="nav-col">Colección</a>
-      <a href="#patrones" data-i18n="nav-pat">Patrones</a>
-      <a href="#valores" data-i18n="nav-val">Valores</a>
-      <a href="#nosotros" data-i18n="nav-nos">Nosotros</a>
-      <a href="#contacto" data-i18n="nav-con">Contacto</a>
-    </nav>
   </div>
 </header>
+
+<div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Secciones (móvil)">
+  <a href="#coleccion" data-i18n="nav-col">Colección</a>
+  <a href="#patrones" data-i18n="nav-pat">Patrones</a>
+  <a href="#valores" data-i18n="nav-val">Valores</a>
+  <a href="#nosotros" data-i18n="nav-nos">Nosotros</a>
+  <a href="#contacto" data-i18n="nav-con">Contacto</a>
+  <a class="menu-ig" href="https://www.instagram.com/clop_patchwork">Instagram<small>@clop_patchwork</small></a>
+</nav>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
   <section class="hero" aria-label="Presentación">
     <div class="wrap">
-      <div class="hero-frame">
-        <img src="img/post-06.jpg" alt="Colcha de patchwork con flor Dresden tendida al sol" fetchpriority="high">
-        <svg class="hero-stitch" aria-hidden="true">
-          <defs>
-            <mask id="stitch-mask">
-              <rect class="stitch-reveal-path" x="0" y="0" width="100%" height="100%" pathLength="100"/>
-            </mask>
-          </defs>
-          <rect class="stitch-dashes" x="0" y="0" width="100%" height="100%" pathLength="100" mask="url(#stitch-mask)"/>
-        </svg>
+      <div class="hero-layout">
+        <div class="hero-frame">
+          <img src="img/post-06.jpg" alt="Colcha de patchwork con flor Dresden tendida al sol" fetchpriority="high">
+          <svg class="hero-stitch" aria-hidden="true">
+            <defs>
+              <mask id="stitch-mask">
+                <rect class="stitch-reveal-path" x="0" y="0" width="100%" height="100%" pathLength="100"/>
+              </mask>
+            </defs>
+            <rect class="stitch-dashes" x="0" y="0" width="100%" height="100%" pathLength="100" mask="url(#stitch-mask)"/>
+          </svg>
+        </div>
         <div class="hero-card">
           <span class="script" data-i18n="hero-script">Hecho a mano, retal a retal</span>
           <h1 data-i18n="hero-h1">Costura con corazón, para tu <em>hogar</em>.</h1>
@@ -645,7 +733,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section><!-- /hero -->
 
   <!-- ============ SELVAGE ============ -->
   <div class="selvage" aria-hidden="true">
@@ -1212,18 +1300,25 @@
   try { saved = localStorage.getItem("clop-lang"); } catch(e){}
   if (saved === "en") setLang("en");
 
-  /* ---------- mobile menu ---------- */
+  /* ---------- mobile drawer menu ---------- */
   var menuBtn = document.getElementById("menu-btn");
   var mobileMenu = document.getElementById("mobile-menu");
-  menuBtn.addEventListener("click", function(){
-    var open = mobileMenu.classList.toggle("open");
+  var backdrop = document.getElementById("menu-backdrop");
+  function setMenu(open){
+    mobileMenu.classList.toggle("open", open);
+    backdrop.classList.toggle("open", open);
+    document.body.classList.toggle("menu-open", open);
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  menuBtn.addEventListener("click", function(){
+    setMenu(!mobileMenu.classList.contains("open"));
+  });
+  backdrop.addEventListener("click", function(){ setMenu(false); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") setMenu(false);
   });
   mobileMenu.addEventListener("click", function(e){
-    if (e.target.tagName === "A"){
-      mobileMenu.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded","false");
-    }
+    if (e.target.closest("a")) setMenu(false);
   });
 
   /* ---------- reveal on scroll ---------- */
