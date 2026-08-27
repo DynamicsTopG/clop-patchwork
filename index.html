@@ -1228,13 +1228,13 @@
         </ul>
       </div>
 
-      <form id="contact-form" class="contact-form stitched reveal" action="https://formsubmit.co/d665d042e88829251e317a3f8312e040" method="POST">
+      <form id="contact-form" class="contact-form stitched reveal" action="https://api.web3forms.com/submit" method="POST">
         <h3 data-i18n="form-h3">Escríbenos</h3>
         <p class="form-sub" data-i18n="form-sub">Cuéntanos qué pieza te ha enamorado o qué te gustaría encargar.</p>
-        <input type="hidden" name="_subject" value="Nuevo mensaje desde cloppatchwork.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://www.cloppatchwork.com/#contacto">
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <input type="hidden" name="access_key" value="9c4bfaa4-4465-4d94-9705-827054ba3276">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde cloppatchwork.com">
+        <input type="hidden" name="redirect" value="https://www.cloppatchwork.com/#contacto">
+        <input type="checkbox" name="botcheck" tabindex="-1" style="position:absolute;left:-9999px" aria-hidden="true">
         <div class="field">
           <label for="f-name" data-i18n="form-name">Nombre</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -1423,15 +1423,15 @@
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     formNote.textContent = t.sending;
-    fetch("https://formsubmit.co/ajax/d665d042e88829251e317a3f8312e040", {
+    fetch("https://api.web3forms.com/submit", {
       method:"POST",
       headers:{ "Content-Type":"application/json", "Accept":"application/json" },
       body:JSON.stringify({
+        access_key: "9c4bfaa4-4465-4d94-9705-827054ba3276",
         name: document.getElementById("f-name").value.trim(),
         email: document.getElementById("f-mail").value.trim(),
         message: document.getElementById("f-msg").value.trim(),
-        _subject: "Nuevo mensaje desde cloppatchwork.com",
-        _template: "table"
+        subject: "Nuevo mensaje desde cloppatchwork.com"
       })
     }).then(function(r){
       if (!r.ok) throw new Error("HTTP " + r.status);
