@@ -63,7 +63,8 @@
 
   /* ============ BASE ============ */
   *,*::before,*::after{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top:5.2rem; }
+  @media (max-width:47rem){ html{ scroll-padding-top:3.8rem; } }
   body{
     margin:0;
     color:var(--ink);
@@ -258,13 +259,21 @@
     .nav-links{ display:none; }
     .menu-btn{ display:grid; }
     /* concept layout: hamburger left · logo centered · Instagram right */
-    .nav{ position:relative; justify-content:space-between; }
+    .nav{ position:relative; justify-content:space-between; padding-block:.45rem; }
     .brand{
       position:absolute; left:50%; top:50%;
       transform:translate(-50%,-50%);
+      gap:.5rem;
     }
-    .brand-name{ font-size:1.15rem; }
-    .lang-toggle{ padding:.42rem .6rem; }
+    .brand-logo{ width:2.35rem; height:2.35rem; }
+    .brand-name{ font-size:1.02rem; }
+    .brand-sub{ font-size:.82rem; margin-top:.08rem; }
+    .lang-toggle{ padding:.38rem .55rem; }
+    .ig-link{ width:2.2rem; height:2.2rem; }
+    .menu-btn{ width:2.35rem; height:2.35rem; }
+    /* tighter vertical rhythm on small screens */
+    section{ padding-block:2.3rem 2.7rem; }
+    .section-head{ margin-bottom:1.7rem; }
   }
 
   /* ============ HERO ============ */
@@ -454,35 +463,32 @@
     border-top:2px dashed var(--rosa);
   }
   @media (max-width:47rem){
-    /* concept layout: compact horizontal cards — thumbnail left, text right */
-    .grid-products{ grid-template-columns:1fr; gap:.9rem; }
-    .card{
-      display:grid; grid-template-columns:6.4rem 1fr;
-      align-items:center;
-    }
+    /* photo-first gallery: two columns of square photos, newest piece featured */
+    .grid-products{ grid-template-columns:1fr 1fr; gap:.8rem; }
     .card:hover{ transform:none; }
-    .card-art{ align-self:stretch; }
-    .card-photo{
-      width:100%; height:100%; aspect-ratio:auto;
-      min-height:6.4rem;
-    }
     .card-body{
-      border-top:none;
-      border-left:1.5px dashed var(--seam);
-      padding:.85rem 1rem .9rem;
-      gap:.3rem;
+      padding:.75rem .85rem .85rem;
+      gap:.35rem;
     }
-    .card-body h3{ font-size:1.08rem; }
-    .card-body .mat{
-      font-size:.82rem;
+    .card-body h3{ font-size:.99rem; line-height:1.28; }
+    .card-body .mat{ display:none; }
+    .card-meta{
+      margin-top:.1rem; padding-top:.5rem;
+      flex-wrap:wrap; gap:.35rem .5rem;
+    }
+    .see-post{ padding-block:.25rem; }
+    .chip{ font-size:.58rem; padding:.2rem .5rem .2rem .95rem; }
+    .grid-products .card:first-child{ grid-column:1 / -1; }
+    .grid-products .card:first-child .card-photo{ aspect-ratio:4/3; }
+    .grid-products .card:first-child .card-body{ padding:.95rem 1.05rem 1rem; }
+    .grid-products .card:first-child h3{ font-size:1.22rem; }
+    .grid-products .card:first-child .mat{
       display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical;
       overflow:hidden;
+      font-size:.86rem;
     }
-    .card-meta{
-      margin-top:.2rem; padding-top:.55rem;
-      flex-wrap:wrap; gap:.5rem;
-    }
-    .chip{ font-size:.62rem; padding:.22rem .55rem .22rem 1.05rem; }
+    .grid-products .card:first-child .chip{ font-size:.62rem; }
+    .unique-note{ margin-top:1.6rem; font-size:.92rem; }
   }
 
   /* ============ PATRONES ============ */
@@ -543,6 +549,18 @@
     margin-top:1.8rem; color:var(--ink-soft); font-size:.95rem;
     max-width:44rem; margin-inline:auto; text-align:center;
   }
+  @media (max-width:47rem){
+    .grid-patterns{ gap:1rem; }
+    /* center-crop the square pattern art so each card fits on one screen */
+    .p-block{
+      padding:.85rem .85rem 0;
+      height:11.5rem; overflow:hidden;
+      display:flex; align-items:center;
+    }
+    .p-block svg{ width:100%; height:auto; }
+    .p-body{ padding:.9rem 1.1rem 1.1rem; }
+    .pattern-note{ margin-top:1.4rem; font-size:.9rem; }
+  }
 
   /* ============ VALORES ============ */
   .values-grid{
@@ -557,6 +575,18 @@
   .value svg{ width:3rem; height:3rem; }
   .value h3{ font-size:1.4rem; }
   .value p{ color:var(--ink-soft); font-size:.96rem; }
+  @media (max-width:47rem){
+    /* compact: icon beside heading, text underneath */
+    .values-grid{ gap:.9rem; }
+    .value{
+      display:grid; grid-template-columns:auto 1fr;
+      column-gap:.85rem; row-gap:.5rem; align-items:center;
+      padding:1.25rem 1.2rem;
+    }
+    .value svg{ width:2.2rem; height:2.2rem; }
+    .value h3{ font-size:1.18rem; }
+    .value p{ grid-column:1 / -1; font-size:.93rem; }
+  }
 
   /* ============ NOSOTROS / HISTORIA ============ */
   #nosotros{ background:var(--linen-deep); border-block:1.5px dashed var(--seam); }
