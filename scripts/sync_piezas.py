@@ -35,7 +35,7 @@ INDEX_PATH = ROOT / "index.html"
 JSON_PATH = ROOT / "_data" / "piezas.json"
 IMG_DIR = ROOT / "img" / "piezas"
 
-SITE_URL = "https://www.cloppatchwork.es/"
+SITE_URL = "https://www.cloppatchwork.com/"
 
 CARDS_START = "<!-- CLOP:PIEZAS-START -->"
 CARDS_END = "<!-- CLOP:PIEZAS-END -->"
