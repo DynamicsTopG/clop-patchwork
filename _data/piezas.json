@@ -1,5 +1,47 @@
 [
   {
+    "submitted": "2026-08-16T12:00:00",
+    "name": "Bolso «Rocío Chico»",
+    "slug": "bolso-rocio-chico",
+    "description": "«Pensado para meter literalmente todo lo que necesites, combina la calidez del acolchado con el encanto romántico de las telas florales.» Bolso todoterreno con amplio espacio y bolsillos interiores.",
+    "image": "img/post-14.jpg",
+    "alt": "Bolso de viaje de patchwork acolchado con telas florales rosas y azules y asas multicolor, sobre el césped de un jardín",
+    "status": "Por encargo",
+    "price": null,
+    "instagram": "https://www.instagram.com/p/DcGNV9rit3-/",
+    "order": null,
+    "name_en": "Bag «Rocío Chico»",
+    "description_en": "“Designed to hold literally everything you need, it combines the warmth of quilting with the romantic charm of floral fabrics.” An all-purpose travel bag with plenty of room and inner pockets."
+  },
+  {
+    "submitted": "2026-08-13T12:00:00",
+    "name": "Neceser «Enrollable»",
+    "slug": "neceser-enrollable",
+    "description": "«Quería una pieza superalegre por fuera, pero sobre todo práctica por dentro. Con sus bolsillos de rejilla, lo despliegas y tienes todo a la vista.» Se recoge en un clic, listo para la maleta o el tocador.",
+    "image": "img/post-15.jpg",
+    "alt": "Neceser enrollable de patchwork acolchado con estampados geométricos multicolores sobre una mesa de madera",
+    "status": "Por encargo",
+    "price": null,
+    "instagram": "https://www.instagram.com/p/Db-zhlrjUdG/",
+    "order": null,
+    "name_en": "Roll-up pouch «Enrollable»",
+    "description_en": "“I wanted a piece that was super cheerful on the outside, but above all practical inside. With its mesh pockets, you unroll it and see everything at a glance.” Rolls up in a click, ready for your suitcase or dressing table."
+  },
+  {
+    "submitted": "2026-08-05T12:00:00",
+    "name": "Bolso «Log Cabin»",
+    "slug": "bolso-log-cabin",
+    "description": "«El clásico bloque Log Cabin reinventado en un bolso único. Tonos tierra, verdes y granates que encajan a la perfección con la tela de rayas acolchada.» Asas de piel y cierre metálico.",
+    "image": "img/post-16.jpg",
+    "alt": "Bolso de patchwork con bloque Log Cabin en tonos tierra, verdes y granates, tela de rayas beige acolchada, asas de piel marrón y cierre metálico dorado",
+    "status": "Pieza única",
+    "price": null,
+    "instagram": "https://www.instagram.com/p/DbpzQa5Nqmc/",
+    "order": null,
+    "name_en": "Bag «Log Cabin»",
+    "description_en": "“The classic Log Cabin block reinvented as a one-of-a-kind bag. Earth tones, greens and burgundies that pair perfectly with the quilted striped fabric.” Leather handles and a metal clasp."
+  },
+  {
     "submitted": "2026-08-01T12:00:00",
     "name": "Bolsitos «Pequeños Tesoros»",
     "slug": "bolsitos-pequenos-tesoros",
