@@ -1223,14 +1223,18 @@
                 <rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 6 9 7 9-7"/>
               </svg>
             </span>
-            <span><span class="eyebrow" data-i18n="con-mail">Correo</span><a href="mailto:hola@cloppatchwork.com">hola@cloppatchwork.com</a></span>
+            <span><span class="eyebrow" data-i18n="con-mail">Correo</span><a href="mailto:cloppatchwork@gmail.com">cloppatchwork@gmail.com</a></span>
           </li>
         </ul>
       </div>
 
-      <form id="contact-form" class="contact-form stitched reveal" action="mailto:hola@cloppatchwork.com" method="post">
+      <form id="contact-form" class="contact-form stitched reveal" action="https://formsubmit.co/cloppatchwork@gmail.com" method="POST">
         <h3 data-i18n="form-h3">Escríbenos</h3>
         <p class="form-sub" data-i18n="form-sub">Cuéntanos qué pieza te ha enamorado o qué te gustaría encargar.</p>
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde cloppatchwork.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.cloppatchwork.com/#contacto">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <div class="field">
           <label for="f-name" data-i18n="form-name">Nombre</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -1244,7 +1248,7 @@
           <textarea id="f-msg" name="message" rows="5" required></textarea>
         </div>
         <button class="btn btn-rosa" type="submit" data-i18n="form-send">Enviar</button>
-        <p class="form-note" data-i18n="form-note">Al pulsar «Enviar» se abrirá tu aplicación de correo con el mensaje preparado.</p>
+        <p class="form-note" id="form-note" aria-live="polite" data-i18n="form-note">Tu mensaje llega directamente a nuestro buzón; te responderemos al correo que nos dejes.</p>
       </form>
     </div>
   </section>
@@ -1325,7 +1329,7 @@
     "form-mail":"Email",
     "form-msg":"Message",
     "form-send":"Send",
-    "form-note":"Pressing “Send” will open your email app with the message ready to go.",
+    "form-note":"Your message goes straight to our inbox; we will reply to the email you leave us.",
     "foot-1":"© 2026 CLOP Patchwork · Textile design studio · Spain",
     "foot-2":"Hand-sewn, scrap by scrap."
   };
@@ -1404,17 +1408,42 @@
     items.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- contact form → mailto ---------- */
+  /* ---------- contact form → FormSubmit (delivers to the studio inbox) ---------- */
   var form = document.getElementById("contact-form");
+  var formNote = document.getElementById("form-note");
+  var FORM_MSG = {
+    es: { sending:"Enviando…", ok:"¡Mensaje enviado! Te responderemos muy pronto.",
+          err:"No se pudo enviar. Inténtalo de nuevo o escríbenos por Instagram: @clop_patchwork." },
+    en: { sending:"Sending…", ok:"Message sent! We will get back to you very soon.",
+          err:"It could not be sent. Try again or message us on Instagram: @clop_patchwork." }
+  };
   form.addEventListener("submit", function(e){
     e.preventDefault();
-    var name = document.getElementById("f-name").value.trim();
-    var mail = document.getElementById("f-mail").value.trim();
-    var msg  = document.getElementById("f-msg").value.trim();
-    var subject = (current === "en" ? "Enquiry from the website — " : "Consulta desde la web — ") + name;
-    var body = msg + "\n\n— " + name + " (" + mail + ")";
-    window.location.href = "mailto:hola@cloppatchwork.com?subject=" +
-      encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    var t = FORM_MSG[current === "en" ? "en" : "es"];
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    formNote.textContent = t.sending;
+    fetch("https://formsubmit.co/ajax/cloppatchwork@gmail.com", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body:JSON.stringify({
+        name: document.getElementById("f-name").value.trim(),
+        email: document.getElementById("f-mail").value.trim(),
+        message: document.getElementById("f-msg").value.trim(),
+        _subject: "Nuevo mensaje desde cloppatchwork.com",
+        _template: "table"
+      })
+    }).then(function(r){
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function(){
+      form.reset();
+      formNote.textContent = t.ok;
+    }).catch(function(){
+      formNote.textContent = t.err;
+    }).finally(function(){
+      btn.disabled = false;
+    });
   });
 
   /* ---------- PayPal checkout for PDF patterns ----------
