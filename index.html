@@ -390,6 +390,11 @@
     color:var(--ink-soft);
   }
   .dots{ display:inline-flex; gap:.4rem; }
+  @media (max-width:47rem){
+    /* the wrapping text looked lopsided on small screens — keep only the dots */
+    .selvage-row span:not(.dots){ display:none; }
+    .selvage-row{ gap:.4rem; padding-block:.5rem; }
+  }
   .dots i{ width:.55rem; height:.55rem; border-radius:50%; display:inline-block; }
 
   /* ============ REVEAL ON SCROLL ============ */
