@@ -8,7 +8,7 @@
 <meta name="author" content="CLOP Patchwork">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#F6F1E7">
-<link rel="canonical" href="https://www.cloppatchwork.es/">
+<link rel="canonical" href="https://www.cloppatchwork.com/">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="Logo.jpeg">
 <!-- Open Graph (Facebook, Instagram, WhatsApp) -->
@@ -16,15 +16,15 @@
 <meta property="og:site_name" content="CLOP Patchwork">
 <meta property="og:title" content="CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano">
 <meta property="og:description" content="Estudio de diseño textil familiar en España. Creaciones únicas de patchwork hechas a mano y patrones de costura en PDF. Haz tu pedido por mensaje directo.">
-<meta property="og:url" content="https://www.cloppatchwork.es/">
-<meta property="og:image" content="https://www.cloppatchwork.es/img/post-08.jpg">
+<meta property="og:url" content="https://www.cloppatchwork.com/">
+<meta property="og:image" content="https://www.cloppatchwork.com/img/post-08.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="en_GB">
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano">
 <meta name="twitter:description" content="Estudio de diseño textil familiar en España. Creaciones únicas de patchwork hechas a mano y patrones de costura en PDF.">
-<meta name="twitter:image" content="https://www.cloppatchwork.es/img/post-08.jpg">
+<meta name="twitter:image" content="https://www.cloppatchwork.com/img/post-08.jpg">
 <title>CLOP Patchwork · Bolsos y complementos de patchwork hechos a mano en España</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,9 +38,11 @@
     --linen-deep:#EFE8D9;     /* darker weave stripe */
     --card:#FDFBF5;           /* card panel */
     --ink:#3A332C;            /* warm near-black */
-    --ink-soft:#7C7265;       /* muted taupe */
-    --rosa:#E8447E;           /* CLOP logo pink */
+    --ink-soft:#6F6557;       /* muted taupe — AA (>=4.5:1) on every linen ground */
+    --rosa:#E8447E;           /* CLOP logo pink — identity accent (script, dots, focus) */
     --rosa-deep:#C92A63;
+    --rosa-btn-hover:#AB2153; /* deeper pink for button hover */
+    --rosa-btn-edge:#8E1B45;  /* stitched button bottom edge */
     --rosa-soft:#FADCE7;
     --denim:#7C93B5;
     --mustard:#D9A441;
@@ -141,13 +143,16 @@
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
   }
   .btn:hover{ transform:translateY(-1px); }
+  .btn:active{ transform:translateY(1px); }   /* tactile press feedback */
   .btn-rosa{
-    background:var(--rosa); color:#fff; border:none;
-    box-shadow:0 2px 0 var(--rosa-deep), 0 10px 22px -8px rgba(201,42,99,.55);
+    /* resting fill deepened so the white label clears 4.5:1 (was 3.78:1) */
+    background:var(--rosa-deep); color:#fff; border:none;
+    box-shadow:0 2px 0 var(--rosa-btn-edge), 0 10px 22px -8px rgba(142,27,69,.5);
     /* stitched edge on the button, like the concept */
-    outline:1.5px dashed rgba(255,255,255,.75); outline-offset:-5px;
+    outline:1.5px dashed rgba(255,255,255,.8); outline-offset:-5px;
   }
-  .btn-rosa:hover{ background:var(--rosa-deep); }
+  .btn-rosa:hover{ background:var(--rosa-btn-hover); }
+  .btn-rosa:active{ box-shadow:0 1px 0 var(--rosa-btn-edge), 0 6px 16px -10px rgba(142,27,69,.5); }
   .btn-ghost{
     background:transparent; color:var(--ink);
     border:1.5px dashed var(--seam-strong);
@@ -396,6 +401,7 @@
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lift); }
+  .card:active{ transform:translateY(-1px); }   /* tap feedback on touch */
   .card-art{ display:block; position:relative; overflow:hidden; }
   .card-photo{
     display:block; width:100%; aspect-ratio:1/1; object-fit:cover;
@@ -469,7 +475,7 @@
     .card-body h3{ font-size:1.08rem; }
     .card-body .mat{
       font-size:.82rem;
-      display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+      display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical;
       overflow:hidden;
     }
     .card-meta{
@@ -1140,12 +1146,12 @@
                 <rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 6 9 7 9-7"/>
               </svg>
             </span>
-            <span><span class="eyebrow" data-i18n="con-mail">Correo</span><a href="mailto:hola@cloppatchwork.es">hola@cloppatchwork.es</a></span>
+            <span><span class="eyebrow" data-i18n="con-mail">Correo</span><a href="mailto:hola@cloppatchwork.com">hola@cloppatchwork.com</a></span>
           </li>
         </ul>
       </div>
 
-      <form id="contact-form" class="contact-form stitched reveal" action="mailto:hola@cloppatchwork.es" method="post">
+      <form id="contact-form" class="contact-form stitched reveal" action="mailto:hola@cloppatchwork.com" method="post">
         <h3 data-i18n="form-h3">Escríbenos</h3>
         <p class="form-sub" data-i18n="form-sub">Cuéntanos qué pieza te ha enamorado o qué te gustaría encargar.</p>
         <div class="field">
@@ -1330,7 +1336,7 @@
     var msg  = document.getElementById("f-msg").value.trim();
     var subject = (current === "en" ? "Enquiry from the website — " : "Consulta desde la web — ") + name;
     var body = msg + "\n\n— " + name + " (" + mail + ")";
-    window.location.href = "mailto:hola@cloppatchwork.es?subject=" +
+    window.location.href = "mailto:hola@cloppatchwork.com?subject=" +
       encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   });
 
@@ -1373,13 +1379,13 @@
  "@graph": [
   {
    "@type": "OnlineStore",
-   "@id": "https://www.cloppatchwork.es/#tienda",
+   "@id": "https://www.cloppatchwork.com/#tienda",
    "name": "CLOP Patchwork",
    "alternateName": "Clop",
    "description": "Estudio de diseño textil familiar en España. Bolsos, neceseres, colchas y cojines de patchwork hechos a mano, muchos con tejidos recuperados (upcycling), y patrones de costura en PDF. Creaciones únicas e irrepetibles.",
-   "url": "https://www.cloppatchwork.es/",
-   "email": "hola@cloppatchwork.es",
-   "logo": "https://www.cloppatchwork.es/Logo.jpeg",
+   "url": "https://www.cloppatchwork.com/",
+   "email": "hola@cloppatchwork.com",
+   "logo": "https://www.cloppatchwork.com/Logo.jpeg",
    "sameAs": [
     "https://www.instagram.com/clop_patchwork"
    ],
@@ -1389,12 +1395,12 @@
   },
   {
    "@type": "WebSite",
-   "@id": "https://www.cloppatchwork.es/#web",
-   "url": "https://www.cloppatchwork.es/",
+   "@id": "https://www.cloppatchwork.com/#web",
+   "url": "https://www.cloppatchwork.com/",
    "name": "CLOP Patchwork",
    "inLanguage": "es",
    "publisher": {
-    "@id": "https://www.cloppatchwork.es/#tienda"
+    "@id": "https://www.cloppatchwork.com/#tienda"
    }
   },
   {
@@ -1415,7 +1421,7 @@
       "price": "8.00",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "https://www.cloppatchwork.es/#patrones"
+      "url": "https://www.cloppatchwork.com/#patrones"
      }
     },
     {
@@ -1432,7 +1438,7 @@
       "price": "6.00",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "https://www.cloppatchwork.es/#patrones"
+      "url": "https://www.cloppatchwork.com/#patrones"
      }
     },
     {
@@ -1449,7 +1455,7 @@
       "price": "12.00",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "https://www.cloppatchwork.es/#patrones"
+      "url": "https://www.cloppatchwork.com/#patrones"
      }
     },
     {
@@ -1466,7 +1472,7 @@
       "price": "18.00",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "https://www.cloppatchwork.es/#patrones"
+      "url": "https://www.cloppatchwork.com/#patrones"
      }
     }
    ]
@@ -1486,7 +1492,7 @@
    "position": 1,
    "name": "Bolsitos «Pequeños Tesoros» · patchwork hecho a mano",
    "description": "«Pequeños tesoros para sus grandes aventuras. Acolchados para que sean súper blanditos, con su solapa rosa de lunares, sus botones de corazón y esa tela de unicornios que es pura magia para las más peques.» Hechos a su medida.",
-   "image": "https://www.cloppatchwork.es/img/post-13.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-13.jpg",
    "url": "https://www.instagram.com/p/DbfgywVNeqt/",
    "brand": {
     "@type": "Brand",
@@ -1498,7 +1504,7 @@
    "position": 2,
    "name": "Neceser «Flores de Tilda» · patchwork hecho a mano",
    "description": "«Un detalle que sabe a complicidad. Para este encargo especial elegí estas telas de Tilda: tienen ese punto romántico y delicado.» Modelo práctico que se abre por completo.",
-   "image": "https://www.cloppatchwork.es/img/post-01.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-01.jpg",
    "url": "https://www.instagram.com/p/DaLepSoDUeJ/",
    "brand": {
     "@type": "Brand",
@@ -1510,7 +1516,7 @@
    "position": 3,
    "name": "Neceser «Vichy» · patchwork hecho a mano",
    "description": "«No nació solo de la aguja y el hilo, sino de las ganas de hacerle algo único a mi hija.» Rayas y cuadros vichy: alegre, moderno y con carácter; al abrir la cremallera se despliega por completo.",
-   "image": "https://www.cloppatchwork.es/img/post-02.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-02.jpg",
    "url": "https://www.instagram.com/p/DaAqsqwDSTk/",
    "brand": {
     "@type": "Brand",
@@ -1522,7 +1528,7 @@
    "position": 4,
    "name": "Cesta «Costurero» · patchwork hecho a mano",
    "description": "«Nació como costurero, pero es mucho más: neceser de viaje, cesta de pícnic, organizador de manualidades o maletita para lo esencial.» Asas resistentes y espacio amplio.",
-   "image": "https://www.cloppatchwork.es/img/post-03.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-03.jpg",
    "url": "https://www.instagram.com/p/DZxLSltDaci/",
    "brand": {
     "@type": "Brand",
@@ -1534,7 +1540,7 @@
    "position": 5,
    "name": "Bolso «Nudo» · patchwork hecho a mano",
    "description": "«Hay días que piden ligereza y piezas que simplemente encajan con todo. El equilibrio perfecto entre diseño moderno y el alma de lo artesanal», tejido con un hilo muy especial.",
-   "image": "https://www.cloppatchwork.es/img/post-04.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-04.jpg",
    "url": "https://www.instagram.com/p/DXzJqHMjcg0/",
    "brand": {
     "@type": "Brand",
@@ -1546,7 +1552,7 @@
    "position": 6,
    "name": "Bolso «Pájaros» · patchwork hecho a mano",
    "description": "«Un deseo de unir mundos distintos que comparten el mismo corazón artesanal.» Pintura en tela —pájaros de colores vibrantes— sobre patchwork: un viaje de texturas y técnicas.",
-   "image": "https://www.cloppatchwork.es/img/post-05.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-05.jpg",
    "url": "https://www.instagram.com/p/DWcHRPNDVja/",
    "brand": {
     "@type": "Brand",
@@ -1558,7 +1564,7 @@
    "position": 7,
    "name": "Colcha «Flor» · patchwork hecho a mano",
    "description": "«Hay piezas que no solo se hacen… se construyen puntada a puntada. Cada flor está cosida a mano, como si cada retal fuera un pequeño recuerdo que encuentra su lugar.»",
-   "image": "https://www.cloppatchwork.es/img/post-06.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-06.jpg",
    "url": "https://www.instagram.com/p/DVqdCPjDdwy/",
    "brand": {
     "@type": "Brand",
@@ -1570,7 +1576,7 @@
    "position": 8,
    "name": "Bolso «Corazones» · patchwork hecho a mano",
    "description": "«Hay bolsos que son puro hogar.» Acolchado, patchwork y aplicaciones cosidas a mano que recuerdan a las labores de antes. Sin prisas. Con intención.",
-   "image": "https://www.cloppatchwork.es/img/post-07.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-07.jpg",
    "url": "https://www.instagram.com/p/DVY9vseDR3a/",
    "brand": {
     "@type": "Brand",
@@ -1582,7 +1588,7 @@
    "position": 9,
    "name": "Bolso «Concha» · patchwork hecho a mano",
    "description": "«Inspirado en mi abuela Concha: en sus telas, en sus manos siempre creando, en su manera de convertir retales en algo valioso.» Estructura clásica, tonos tierra y boquilla metálica.",
-   "image": "https://www.cloppatchwork.es/img/post-08.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-08.jpg",
    "url": "https://www.instagram.com/p/DVQrR4vDVBE/",
    "brand": {
     "@type": "Brand",
@@ -1594,7 +1600,7 @@
    "position": 10,
    "name": "Bolso «Trenzado Denim» · patchwork hecho a mano",
    "description": "«Un diseño que ya conocéis, pero con una nueva historia que contar. Mismo patrón, nueva energía: nuevas telas, nuevas texturas, la misma esencia artesanal.»",
-   "image": "https://www.cloppatchwork.es/img/post-09.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-09.jpg",
    "url": "https://www.instagram.com/p/DVOYC4Ujaa5/",
    "brand": {
     "@type": "Brand",
@@ -1606,8 +1612,9 @@
    "position": 11,
    "name": "Cojines «Hogar» · patchwork hecho a mano",
    "description": "«Tu sofá merece piezas que cuenten algo más que comodidad. Cojines únicos, llenos de detalles y corazón.» Log cabin con aplicaciones y bordado artesanal.",
-   "image": "https://www.cloppatchwork.es/img/post-10.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-10.jpg",
    "url": "https://www.instagram.com/p/DUdnmYNjTYe/",
+  
    "brand": {
     "@type": "Brand",
     "name": "CLOP Patchwork"
@@ -1618,7 +1625,7 @@
    "position": 12,
    "name": "Bandolera «Flores» · patchwork hecho a mano",
    "description": "«Hecho a mano, con calma y mucha dedicación. No es solo un accesorio: es una pieza única llena de textura y color. Porque lo artesanal siempre tiene una historia que contar.»",
-   "image": "https://www.cloppatchwork.es/img/post-11.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-11.jpg",
    "url": "https://www.instagram.com/p/DS3L3Q1jZ7X/",
    "brand": {
     "@type": "Brand",
@@ -1630,7 +1637,7 @@
    "position": 13,
    "name": "Bolso «Denim Vintage» · patchwork hecho a mano",
    "description": "«Cuando el denim vintage se convierte en arte. Hecho a mano, con historia y con alma. Pieza única — porque tú también lo eres.» Boquilla vintage y cadena metálica.",
-   "image": "https://www.cloppatchwork.es/img/post-12.jpg",
+   "image": "https://www.cloppatchwork.com/img/post-12.jpg",
    "url": "https://www.instagram.com/p/DSS0CkDjUhc/",
    "brand": {
     "@type": "Brand",
